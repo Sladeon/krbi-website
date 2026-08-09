@@ -22,17 +22,32 @@ export default function BookingForm({ onClose }) {
     setLoading(true);
 
     try {
+      // Save to Supabase
       const { error } = await supabase
         .from('leads')
         .insert([formData]);
 
       if (error) throw error;
 
+      // Send email notification (optional - don't block on failure)
+      try {
+        await fetch('/api/send-lead-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
+        });
+      } catch (emailError) {
+        console.warn('Email notification failed, but form saved successfully:', emailError);
+      }
+
+      // Open Calendly
       window.open(process.env.NEXT_PUBLIC_CALENDLY_URL, '_blank');
       if (onClose) onClose();
     } catch (error) {
       console.error('Error:', error);
+      // Still open Calendly even if there's an error
       window.open(process.env.NEXT_PUBLIC_CALENDLY_URL, '_blank');
+      if (onClose) onClose();
     } finally {
       setLoading(false);
     }
