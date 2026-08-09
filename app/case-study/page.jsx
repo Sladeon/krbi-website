@@ -1,17 +1,23 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import HeroSection from '@/components/HeroSection';
 import CTABox from '@/components/CTABox';
+import BookingForm from '@/components/BookingForm';
 
 export default function CaseStudy() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <>
+      {showForm && <BookingForm onClose={() => setShowForm(false)} />}
       <HeroSection
         imageSrc="/images/05-improvement-chart.png"
         title="From Siloed Spreadsheets to $2M in Measurable Savings."
         subtitle="How we aligned Finance, Operations, Sales, and Warehouse around one definition of loss and waste and drove 30% year-over-year improvement in six months."
         ctaText="Explore a Similar Engagement for Your Organization"
+        onClick={() => setShowForm(true)}
       />
 
       <div className="container mx-auto px-8 py-12">
@@ -45,6 +51,7 @@ export default function CaseStudy() {
             title="Want Similar Results?"
             description="If your organization has similar challenges, let us explore whether a similar approach would work for you."
             ctaText="Explore a Similar Engagement for Your Organization"
+            onClick={() => setShowForm(true)}
           />
         </section>
       </div>

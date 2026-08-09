@@ -1,17 +1,23 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import HeroSection from '@/components/HeroSection';
 import CTABox from '@/components/CTABox';
+import BookingForm from '@/components/BookingForm';
 
 export default function Insights() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <>
+      {showForm && <BookingForm onClose={() => setShowForm(false)} />}
       <HeroSection
         imageSrc="/images/06-org-alignment.png"
         title="Organizations Act When They Agree on the Truth."
         subtitle="Your data exists. Your dashboards exist. Your teams still don't agree on what the numbers mean. The gap between insight and action is organizational alignment."
         ctaText="Align Your Organization. Schedule a Discovery Call."
+        onClick={() => setShowForm(true)}
       />
 
       <div className="container mx-auto px-8 py-12">
@@ -33,6 +39,7 @@ export default function Insights() {
             title="Start Your Organization's Alignment"
             description="We will help you facilitate that conversation across Finance, Operations, Sales, and IT. You will identify your critical gaps. From there, we will scope a path to alignment."
             ctaText="Schedule an Alignment Discovery Call"
+            onClick={() => setShowForm(true)}
           />
         </section>
       </div>

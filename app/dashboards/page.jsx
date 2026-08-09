@@ -1,17 +1,23 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import HeroSection from '@/components/HeroSection';
 import CTABox from '@/components/CTABox';
+import BookingForm from '@/components/BookingForm';
 
 export default function Dashboards() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <>
+      {showForm && <BookingForm onClose={() => setShowForm(false)} />}
       <HeroSection
         imageSrc="/images/04-case-study-dashboard.png"
         title="A Dashboard Is Only as Useful as the Owner Who Acts on It."
         subtitle="You have data. You have dashboards. Nothing changes. That's because your reporting infrastructure isn't connected to accountability. We build the feedback loops that turn dashboards into action."
         ctaText="See a Live Dashboard Example"
+        onClick={() => setShowForm(true)}
       />
 
       <div className="container mx-auto px-8 py-12">
@@ -29,6 +35,7 @@ export default function Dashboards() {
             title="Let's Talk About Your KPI Infrastructure"
             description="We'll show you what a KPI dashboard infrastructure looks like and scope what a similar engagement might look like for you."
             ctaText="Schedule a Dashboard Discovery Call"
+            onClick={() => setShowForm(true)}
           />
         </section>
       </div>

@@ -1,17 +1,23 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import HeroSection from '@/components/HeroSection';
 import CTABox from '@/components/CTABox';
+import BookingForm from '@/components/BookingForm';
 
 export default function Governance() {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <>
+      {showForm && <BookingForm onClose={() => setShowForm(false)} />}
       <HeroSection
         imageSrc="/images/02-problem-visual.png"
         title="Data Does Not Fail. Definitions Do."
         subtitle="Your manufacturing data lives in spreadsheets, accounting systems, and databases that do not talk to each other. The first step is not building a dashboard. It is agreeing on what you are measuring."
         ctaText="Download the Data Governance Checklist"
+        onClick={() => setShowForm(true)}
       />
 
       <div className="container mx-auto px-8 py-12">
@@ -41,6 +47,7 @@ export default function Governance() {
             title="Download Our Data Governance Checklist"
             description="We have captured the data governance framework we use with clients into a checklist. Download it, walk through your organization's current state, and see where the gaps are. If you want to talk through what you discover, schedule a discovery call."
             ctaText="Download the Checklist and Schedule a Call"
+            onClick={() => setShowForm(true)}
           />
         </section>
       </div>
