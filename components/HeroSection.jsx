@@ -2,27 +2,100 @@
 
 import Image from 'next/image';
 
-export default function HeroSection({ imageSrc, title, subtitle, ctaText, onClick }) {
+/**
+ * Full-bleed editorial hero. Left-aligned content over a dark gradient,
+ * optional stat strip pinned to the bottom (tall variant).
+ */
+export default function HeroSection({
+  imageSrc,
+  imageAlt,
+  eyebrow,
+  title,
+  subtitle,
+  primaryCta,   // { label, onClick } or { label, href }
+  secondaryCta, // { label, href }
+  stats,        // [{ value, label }]
+  tall = false,
+}) {
   return (
-    <div className="relative h-96 md:h-600 flex items-center justify-center overflow-hidden">
-      <Image
-        src={imageSrc}
-        alt="Hero background"
-        fill
-        className="object-cover"
-        priority
-      />
-      <div className="absolute inset-0 bg-black/40"></div>
-      <div className="relative z-10 text-center text-white max-w-3xl px-8">
-        <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">{title}</h1>
-        <p className="text-lg md:text-xl font-medium mb-8 opacity-95">{subtitle}</p>
-        <button 
-          onClick={onClick}
-          className="cta-button"
-        >
-          {ctaText}
-        </button>
+    <header
+      className={`relative flex flex-col justify-center overflow-hidden bg-navy ${
+        tall ? 'min-h-[88vh]' : 'min-h-[54vh]'
+      }`}
+    >
+      <div className="absolute inset-0 ken-burns">
+        <Image
+          src={imageSrc}
+          alt={imageAlt || ''}
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
       </div>
-    </div>
+
+      {/* Directional scrim: readable text, image still visible on the right */}
+      <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/75 to-navy/25" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-navy/80 to-transparent" />
+
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-24 lg:px-8">
+        <div className="max-w-2xl">
+          {eyebrow && (
+            <p className="eyebrow eyebrow-light hero-rise mb-5" style={{ '--rise-delay': '0.05s' }}>
+              {eyebrow}
+            </p>
+          )}
+          <h1
+            className="hero-rise mb-6 text-4xl font-bold leading-[1.1] !text-white md:text-[3.4rem]"
+            style={{ '--rise-delay': '0.15s' }}
+          >
+            {title}
+          </h1>
+          {subtitle && (
+            <p
+              className="hero-rise mb-9 max-w-xl text-lg leading-relaxed text-white/80 md:text-xl"
+              style={{ '--rise-delay': '0.3s' }}
+            >
+              {subtitle}
+            </p>
+          )}
+          <div
+            className="hero-rise flex flex-col gap-4 sm:flex-row"
+            style={{ '--rise-delay': '0.45s' }}
+          >
+            {primaryCta && (
+              primaryCta.href ? (
+                <a href={primaryCta.href} className="btn-primary">{primaryCta.label}</a>
+              ) : (
+                <button onClick={primaryCta.onClick} className="btn-primary">
+                  {primaryCta.label}
+                </button>
+              )
+            )}
+            {secondaryCta && (
+              <a href={secondaryCta.href} className="btn-ghost">
+                {secondaryCta.label}
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {stats && stats.length > 0 && (
+        <div
+          className="hero-rise relative z-10 mx-auto w-full max-w-6xl px-6 pb-12 lg:px-8"
+          style={{ '--rise-delay': '0.6s' }}
+        >
+          <div className="grid grid-cols-3 gap-4 border-t border-white/20 pt-8 md:gap-8">
+            {stats.map(({ value, label }) => (
+              <div key={label}>
+                <p className="text-2xl font-bold text-white md:text-4xl">{value}</p>
+                <p className="mt-1 text-[0.8rem] leading-snug text-white/60 md:text-sm">{label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+    </header>
   );
 }

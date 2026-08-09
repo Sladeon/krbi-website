@@ -1,16 +1,72 @@
+import Link from 'next/link';
+import Image from 'next/image';
+
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-8 mt-12">
-      <div className="container mx-auto px-8 text-center">
-        <p className="font-bold mb-2">Kettle River Business Intelligence</p>
-        <p className="text-gray-400 mb-4">Data Governance | Power BI | Organizational Alignment | KPI Strategy</p>
-        <p className="text-gray-400 mb-4">
-          <strong>Contact:</strong> mitch@kettleriverbi.com · 503.523.9777 · www.kettleriverbi.com
-        </p>
-        <p className="text-gray-400 mb-6">Based in Kettle Falls, WA. Serving manufacturers across the United States.</p>
-        <p className="border-t border-gray-700 pt-6 text-gray-500 text-sm">
-          © 2026 Kettle River Business Intelligence. All rights reserved.
-        </p>
+    <footer className="bg-navy text-white">
+      <div className="mx-auto grid max-w-6xl gap-12 px-6 py-16 md:grid-cols-[1.4fr_1fr_1fr] lg:px-8">
+        {/* Brand */}
+        <div>
+          <Image
+            src="/logo-white.png"
+            alt="Kettle River BI"
+            width={190}
+            height={107}
+            className="mb-5 h-auto w-44"
+          />
+          <p className="mb-4 text-[0.95rem] italic text-steel-soft">
+            business mastery through business intelligence
+          </p>
+          <p className="max-w-sm text-[0.9rem] leading-relaxed text-white/55">
+            Fractional BI analyst and project manager for manufacturers.
+            Enterprise-level intelligence at a fraction of the cost of a
+            full-time analyst.
+          </p>
+        </div>
+
+        {/* Services */}
+        <div>
+          <p className="mb-4 text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-steel-soft">
+            Services
+          </p>
+          <ul className="space-y-2.5 text-[0.92rem]">
+            <li><Link href="/governance" className="text-white/70 transition-colors hover:text-white">Data Governance</Link></li>
+            <li><Link href="/dashboards" className="text-white/70 transition-colors hover:text-white">KPI Dashboards</Link></li>
+            <li><Link href="/insights" className="text-white/70 transition-colors hover:text-white">Insights &amp; Alignment</Link></li>
+            <li><Link href="/case-study" className="text-white/70 transition-colors hover:text-white">Case Study</Link></li>
+          </ul>
+        </div>
+
+        {/* Contact */}
+        <div>
+          <p className="mb-4 text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-steel-soft">
+            Contact
+          </p>
+          <ul className="space-y-2.5 text-[0.92rem] text-white/70">
+            <li>
+              <a href="mailto:mitch@kettleriverbi.com" className="transition-colors hover:text-white">
+                mitch@kettleriverbi.com
+              </a>
+            </li>
+            <li>
+              <a href="tel:+15035239777" className="transition-colors hover:text-white">
+                503.523.9777
+              </a>
+            </li>
+            <li className="pt-1 text-white/45">
+              Kettle Falls, WA
+              <br />
+              Serving manufacturers across the United States
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-6 text-[0.82rem] text-white/40 md:flex-row lg:px-8">
+          <p>© 2026 Kettle River Business Intelligence. All rights reserved.</p>
+          <p>Data Governance · Power BI · Organizational Alignment · KPI Strategy</p>
+        </div>
       </div>
     </footer>
   );

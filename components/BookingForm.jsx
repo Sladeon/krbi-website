@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/lib/supabase';
 
 export default function BookingForm({ onClose }) {
@@ -11,6 +11,23 @@ export default function BookingForm({ onClose }) {
     company: '',
     pain_point: ''
   });
+
+  // Escape closes, body scroll locks while open
+  const handleKey = useCallback(
+    (e) => {
+      if (e.key === 'Escape' && onClose) onClose();
+    },
+    [onClose]
+  );
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKey);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.removeEventListener('keydown', handleKey);
+      document.body.style.overflow = '';
+    };
+  }, [handleKey]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -40,12 +57,10 @@ export default function BookingForm({ onClose }) {
         console.warn('Email notification failed, but form saved successfully:', emailError);
       }
 
-      // Open Calendly
       window.open(process.env.NEXT_PUBLIC_CALENDLY_URL, '_blank');
       if (onClose) onClose();
     } catch (error) {
       console.error('Error:', error);
-      // Still open Calendly even if there's an error
       window.open(process.env.NEXT_PUBLIC_CALENDLY_URL, '_blank');
       if (onClose) onClose();
     } finally {
@@ -53,71 +68,94 @@ export default function BookingForm({ onClose }) {
     }
   };
 
+  const inputClass =
+    'w-full rounded-md border border-navy/15 bg-white px-4 py-2.5 text-[0.95rem] text-navy placeholder:text-navy/35 transition-colors focus:border-steel focus:outline-none focus:ring-2 focus:ring-steel/25';
+
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
-        <h3 className="text-2xl font-bold mb-4 text-gray-900">Schedule a Discovery Call</h3>
+    <div
+      className="backdrop-in fixed inset-0 z-[60] flex items-center justify-center bg-navy/60 p-4 backdrop-blur-sm"
+      onClick={(e) => {
+        if (e.target === e.currentTarget && onClose) onClose();
+      }}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="booking-title"
+    >
+      <div className="modal-in relative w-full max-w-md rounded-xl bg-white p-8 shadow-2xl">
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full text-navy/40 transition-colors hover:bg-cream hover:text-navy"
+        >
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden>
+            <path d="M1 1l12 12M13 1L1 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+          </svg>
+        </button>
+
+        <p className="eyebrow mb-2">30-minute discovery call</p>
+        <h3 id="booking-title" className="mb-1 text-2xl font-bold text-navy">
+          Let's talk about your numbers
+        </h3>
+        <p className="mb-6 text-[0.9rem] text-navy/55">
+          Tell us where it hurts. We'll pick the time on the next screen.
+        </p>
+
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <label className="mb-1.5 block text-[0.85rem] font-medium text-navy/80">Name</label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className={inputClass}
               placeholder="Your name"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <label className="mb-1.5 block text-[0.85rem] font-medium text-navy/80">Work email</label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className={inputClass}
               placeholder="you@company.com"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Company</label>
+            <label className="mb-1.5 block text-[0.85rem] font-medium text-navy/80">Company</label>
             <input
               type="text"
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className={inputClass}
               placeholder="Your company"
             />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">What is your biggest pain point?</label>
+            <label className="mb-1.5 block text-[0.85rem] font-medium text-navy/80">
+              What's your biggest data pain point?
+            </label>
             <textarea
               name="pain_point"
               value={formData.pain_point}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-              placeholder="Tell us about your challenge..."
+              className={inputClass}
+              placeholder="Reports that don't reconcile, dashboards nobody uses..."
               rows="3"
             />
           </div>
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 disabled:opacity-50"
-          >
-            {loading ? 'Scheduling...' : 'Open Calendly'}
+          <button type="submit" disabled={loading} className="btn-primary w-full disabled:opacity-50">
+            {loading ? 'Saving...' : 'Continue to Calendar'}
           </button>
-          <button
-            type="button"
-            onClick={onClose}
-            className="w-full text-gray-600 py-2 rounded-lg hover:bg-gray-100"
-          >
-            Close
-          </button>
+          <p className="text-center text-[0.78rem] text-navy/40">
+            No spam. No newsletter you didn't ask for.
+          </p>
         </form>
       </div>
     </div>
