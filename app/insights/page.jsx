@@ -13,8 +13,8 @@ export default function Insights() {
     <>
       {showForm && <BookingForm onClose={() => setShowForm(false)} />}
       <HeroSection
-        imageSrc="/images/06-org-alignment.png"
-        imageAlt="Manufacturing leadership team aligned around one shared set of numbers"
+        imageSrc="/images/hero-insights.jpg"
+        imageAlt="Manufacturing leadership team reviewing one shared dashboard in a boardroom"
         eyebrow="Insights & Alignment"
         title="Organizations act when they agree on the truth."
         subtitle="Your data exists. Your dashboards exist. Your teams still don't agree on what the numbers mean. The gap between insight and action is organizational alignment."

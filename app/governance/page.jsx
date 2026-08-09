@@ -14,8 +14,8 @@ export default function Governance() {
     <>
       {showForm && <BookingForm onClose={() => setShowForm(false)} />}
       <HeroSection
-        imageSrc="/images/02-problem-visual.png"
-        imageAlt="Fragmented manufacturing data spread across disconnected spreadsheets and systems"
+        imageSrc="/images/hero-governance.jpg"
+        imageAlt="Scattered glass panes converging into one ordered row, representing fragmented data becoming governed data"
         eyebrow="Data Governance"
         title="Data does not fail. Definitions do."
         subtitle="Your manufacturing data lives in spreadsheets, accounting systems, and databases that do not talk to each other. The first step is not building a dashboard. It is agreeing on what you are measuring."

@@ -13,8 +13,8 @@ export default function Dashboards() {
     <>
       {showForm && <BookingForm onClose={() => setShowForm(false)} />}
       <HeroSection
-        imageSrc="/images/04-case-study-dashboard.png"
-        imageAlt="Power BI KPI dashboard showing manufacturing loss and waste metrics by owner"
+        imageSrc="/images/hero-dashboards.jpg"
+        imageAlt="Engineer reviewing a wall-mounted KPI dashboard in a dim manufacturing operations room"
         eyebrow="KPI Dashboards"
         title="A dashboard is only as useful as the owner who acts on it."
         subtitle="You have data. You have dashboards. Nothing changes. That's because your reporting infrastructure isn't connected to accountability. We build the feedback loops that turn dashboards into action."

@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import CursorGlow from "@/components/CursorGlow";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -34,7 +35,7 @@ export const metadata = {
     title: "Manufacturing Business Intelligence Consulting | Kettle River BI",
     description:
       "Finance, Operations, and IT finally agree. Kettle River BI aligns manufacturers around one truth and drives measurable outcomes.",
-    images: [{ url: "/images/01-homepage-hero.png", width: 1376, height: 768 }],
+    images: [{ url: "/images/hero-home.jpg", width: 1920, height: 1080 }],
   },
   twitter: {
     card: "summary_large_image",
@@ -74,6 +75,7 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <CursorGlow />
         <Navigation />
         <main>{children}</main>
         <Footer />

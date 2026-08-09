@@ -28,15 +28,15 @@ export default function HeroSection({
           src={imageSrc}
           alt={imageAlt || ''}
           fill
-          className="object-cover"
+          className="object-cover brightness-[0.88]"
           priority
           sizes="100vw"
         />
       </div>
 
       {/* Directional scrim: readable text, image still visible on the right */}
-      <div className="absolute inset-0 bg-gradient-to-r from-navy/95 via-navy/75 to-navy/25" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-navy/80 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/35" />
+      <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-navy/85 to-transparent" />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-6 py-24 lg:px-8">
         <div className="max-w-2xl">
@@ -46,14 +46,14 @@ export default function HeroSection({
             </p>
           )}
           <h1
-            className="hero-rise mb-6 text-4xl font-bold leading-[1.1] !text-white md:text-[3.4rem]"
+            className="hero-rise mb-6 text-4xl font-bold leading-[1.1] !text-white [text-shadow:0_2px_28px_rgba(1,1,1,0.55)] md:text-[3.4rem]"
             style={{ '--rise-delay': '0.15s' }}
           >
             {title}
           </h1>
           {subtitle && (
             <p
-              className="hero-rise mb-9 max-w-xl text-lg leading-relaxed text-white/80 md:text-xl"
+              className="hero-rise mb-9 max-w-xl text-lg leading-relaxed text-white/85 [text-shadow:0_1px_14px_rgba(1,1,1,0.55)] md:text-xl"
               style={{ '--rise-delay': '0.3s' }}
             >
               {subtitle}

@@ -13,8 +13,8 @@ export default function CaseStudy() {
     <>
       {showForm && <BookingForm onClose={() => setShowForm(false)} />}
       <HeroSection
-        imageSrc="/images/05-improvement-chart.png"
-        imageAlt="Loss and waste trend chart showing 30 percent year-over-year improvement"
+        imageSrc="/images/hero-case-study.jpg"
+        imageAlt="Minimal declining trend curve representing a 30 percent year-over-year loss and waste reduction"
         eyebrow="Case Study · Smith Brothers"
         title="From siloed spreadsheets to $2M in measurable savings."
         subtitle="How we aligned Finance, Operations, Sales, and Warehouse around one definition of loss and waste, and drove 30% year-over-year improvement in six months."

@@ -75,8 +75,8 @@ export default function Home() {
 
       <HeroSection
         tall
-        imageSrc="/images/01-homepage-hero.png"
-        imageAlt="Manufacturing team reviewing live production KPIs on the plant floor"
+        imageSrc="/images/hero-home.jpg"
+        imageAlt="Two workers reviewing production notes together on a spotless food manufacturing floor"
         eyebrow="Manufacturing Business Intelligence"
         title={
           <>
