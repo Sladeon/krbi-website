@@ -1,11 +1,14 @@
 'use client';
 
+import { useState } from 'react';
 import Image from 'next/image';
 import HeroSection from '@/components/HeroSection';
 import CTABox from '@/components/CTABox';
-import FAQSection from '@/components/FAQSection';
+import BookingForm from '@/components/BookingForm';
 
 export default function Home() {
+  const [showForm, setShowForm] = useState(false);
+
   const faqs = [
     {
       q: "Do you build dashboards?",
@@ -35,11 +38,14 @@ export default function Home() {
 
   return (
     <>
+      {showForm && <BookingForm onClose={() => setShowForm(false)} />}
+
       <HeroSection
         imageSrc="/images/01-homepage-hero.png"
         title="Your Finance Team Calls It Shrink. Operations Calls It Waste. Nobody Acts on a Number They Don't Understand."
         subtitle="Kettle River BI translates between departments, defines clean metrics, and builds the accountability structures that drive real improvement."
         ctaText="Schedule a 30-Minute Discovery Call"
+        onClick={() => setShowForm(true)}
       />
 
       <div className="container mx-auto px-8 py-12">
@@ -61,6 +67,7 @@ export default function Home() {
             title="Ready to Align Your Organization?"
             description="If your leadership team spends half its time arguing about numbers instead of acting on them, we've seen the path forward. Let's schedule a 30-minute discovery call. We'll ask you the same questions we asked our other clients. You'll see within minutes whether this is the right approach for your organization."
             ctaText="Schedule a 30-Minute Discovery Call"
+            onClick={() => setShowForm(true)}
           />
         </section>
 
