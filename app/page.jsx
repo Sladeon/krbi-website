@@ -254,6 +254,62 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---------- TESTIMONIALS ---------- */}
+      <section className="bg-cream">
+        <div className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
+          <Reveal>
+            <p className="eyebrow mb-4">Client Voices</p>
+            <h2 className="mb-14 max-w-2xl text-3xl font-bold md:text-4xl">
+              Different plants. Different systems. Same outcome.
+            </h2>
+          </Reveal>
+          <div className="grid gap-6 md:grid-cols-2">
+            {[
+              {
+                quote:
+                  'We lacked effective BI and KPI tools to monitor production and financial performance. Kettle River BI spearheaded the adoption of Power BI dashboarding and KPI tracking for us. With the new custom solution, we have real-time visibility into our operations, enabling data-driven decisions and continuous improvement strategies to thrive in our business.',
+                name: 'Charles Nutter',
+                role: 'VP of Operations, Oregon Ice Cream',
+              },
+              {
+                quote:
+                  'Previously, what took days now can be done in minutes. As a result, the budget was completed weeks ahead of what had been done in the past allowing for a deeper analysis than has ever been done before!',
+                name: 'Linda Pearce',
+                role: 'CFO, Tillamook Cheese',
+              },
+              {
+                quote:
+                  "Kettle River BI automated our company's budget upload and reporting process. The budgeting tools he created were highly functional and incredibly intuitive. Thanks to Mitch's efforts, the data gathering process that had been disjointed and confusing became seamless. Our new, highly automated budgeting process literally saved our budget team weeks of hard work!",
+                name: 'Kent Walker',
+                role: 'Director of Finance',
+              },
+              {
+                quote:
+                  'The most unique attribute that Mitch possesses when bringing data to life is the marrying of his business and accounting acumen with his data mining abilities. Mitch can go beyond the surface level of a request and incorporate additional, meaningful data that will add value to the analysis. I would not hesitate to recommend Mitch to any of the clients I work with.',
+                name: 'Travis Hendrick',
+                role: 'Finance and Construction Professional',
+              },
+            ].map(({ quote, name, role }, i) => (
+              <Reveal key={name} delay={(i % 2) * 0.12}>
+                <figure className="card-lift flex h-full flex-col rounded-xl border border-navy/10 bg-white p-8">
+                  <svg width="28" height="22" viewBox="0 0 36 28" fill="none" className="mb-5 flex-shrink-0" aria-hidden>
+                    <path d="M0 28V16.8C0 7.1 5.7 1.3 15.1 0l1.6 4.6c-5.4 1.3-8.2 4.4-8.5 8.6H15V28H0zm21 0V16.8C21 7.1 26.7 1.3 36 0l1.6 4.6c-5.4 1.3-8.2 4.4-8.5 8.6H36V28H21z" fill="#5D8597" />
+                  </svg>
+                  <blockquote className="mb-6 flex-1 text-[0.95rem] leading-relaxed text-navy/75">
+                    {quote}
+                  </blockquote>
+                  <figcaption className="text-sm text-navy/50">
+                    <span className="font-semibold text-navy">{name}</span>
+                    <br />
+                    {role}
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ---------- SERVICES ---------- */}
       <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
         <Reveal>

@@ -21,6 +21,7 @@ export const metadata = {
   },
   description:
     "Kettle River BI aligns Finance, Operations, and IT around one set of numbers. Data governance, Power BI dashboards, and accountability structures for manufacturers.",
+  alternates: { canonical: "/" },
   keywords: [
     "manufacturing business intelligence",
     "data governance manufacturing",

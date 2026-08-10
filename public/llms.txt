@@ -13,6 +13,12 @@ Key facts:
 
 What makes KRBI different: most BI consultants start by asking what reports you want. KRBI starts by asking what decisions you need to make and who owns the outcome, then gets Finance, Operations, and IT to agree on metric definitions before building anything.
 
+Client results (from published testimonials):
+- Oregon Ice Cream (VP of Operations, Charles Nutter): KRBI spearheaded Power BI dashboarding and KPI tracking, giving real-time visibility into production and financial performance.
+- Tillamook Cheese (CFO, Linda Pearce): budgeting that took days now takes minutes; the budget was completed weeks ahead of prior years with deeper analysis.
+- A Director of Finance (Kent Walker): KRBI automated the budget upload and reporting process, saving the budget team weeks of work.
+- Smith Brothers (Former COO, Sebastian Pastore): replaced hundreds of siloed Excel tools with shared BI reporting; 30% YoY loss and waste reduction, roughly $2M in annual savings.
+
 ## Pages
 
 - [Home](https://krbi-website.vercel.app/): The problem KRBI solves. Finance, Operations, and Sales report different numbers for the same thing; nobody acts on a number they don't understand. Approach: align on definitions, quantify against source systems, assign ownership.
