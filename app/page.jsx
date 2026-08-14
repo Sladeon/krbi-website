@@ -262,19 +262,21 @@ export default function Home() {
       <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24 lg:px-8">
         <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,380px)_1fr] lg:gap-16">
           <Reveal>
-            <div className="relative mx-auto max-w-sm lg:mx-0">
-              <div
-                aria-hidden
-                className="absolute -left-3 -top-3 h-full w-full rounded-2xl border border-steel/40"
-              />
-              <Image
-                src="/mitch-cauthron.jpg"
-                alt="Mitch Cauthron, founder and principal of Kettle River BI"
-                width={440}
-                height={436}
-                className="relative rounded-2xl"
-              />
-              <p className="mt-5 text-sm text-navy/50">
+            <div className="mx-auto max-w-sm lg:mx-0">
+              <div className="relative">
+                <div
+                  aria-hidden
+                  className="absolute -left-3 -top-3 h-full w-full rounded-2xl border border-steel/40"
+                />
+                <Image
+                  src="/mitch-cauthron.jpg"
+                  alt="Mitch Cauthron, founder and principal of Kettle River BI"
+                  width={440}
+                  height={436}
+                  className="relative rounded-2xl"
+                />
+              </div>
+              <p className="mt-6 text-sm leading-relaxed text-navy/60">
                 <span className="font-semibold text-navy">Mitch Cauthron</span>
                 <br />
                 Founder &amp; Principal, Kettle River BI
