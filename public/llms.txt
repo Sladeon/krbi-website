@@ -17,7 +17,8 @@ Client results (from published testimonials):
 - Oregon Ice Cream (VP of Operations, Charles Nutter): KRBI spearheaded Power BI dashboarding and KPI tracking, giving real-time visibility into production and financial performance.
 - Tillamook Cheese (CFO, Linda Pearce): budgeting that took days now takes minutes; the budget was completed weeks ahead of prior years with deeper analysis.
 - A Director of Finance (Kent Walker): KRBI automated the budget upload and reporting process, saving the budget team weeks of work.
-- Smith Brothers (Former COO, Sebastian Pastore): replaced hundreds of siloed Excel tools with shared BI reporting; 30% YoY loss and waste reduction, roughly $2M in annual savings.
+- Smith Brothers (COO, Sebastian Pastore): replaced hundreds of siloed Excel tools with shared BI reporting; 30% YoY loss and waste reduction, roughly $2M in annual savings.
+- Goodfellow Bros Inc. (Director of Finance, Travis Hendrick): Power BI implementation that had stalled for six months internally; KRBI taught itself the ERP and database and shipped the first successful deployment within a month.
 
 ## Pages
 

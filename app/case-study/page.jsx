@@ -86,7 +86,7 @@ export default function CaseStudy() {
                   at them together, they did not reconcile. So we spent half our time figuring out
                   what the numbers meant instead of fixing them."
                   <footer className="mt-3 not-italic text-sm text-navy/50">
-                    Sebastian Pastore, then COO of Smith Brothers
+                    Sebastian Pastore, COO of Smith Brothers
                   </footer>
                 </blockquote>
               </Reveal>
@@ -234,7 +234,7 @@ export default function CaseStudy() {
               <figcaption className="mt-8 text-sm text-white/50">
                 <span className="font-semibold text-white/85">Sebastian Pastore</span>
                 <br />
-                Former COO, Smith Brothers
+                COO, Smith Brothers
               </figcaption>
             </figure>
           </Reveal>

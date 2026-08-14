@@ -247,7 +247,7 @@ export default function Home() {
                 <figcaption className="text-sm text-white/50">
                   <span className="font-semibold text-white/80">Sebastian Pastore</span>
                   <br />
-                  Former COO, Smith Brothers
+                  COO, Smith Brothers
                 </figcaption>
               </figure>
             </Reveal>
@@ -361,7 +361,7 @@ export default function Home() {
                 quote:
                   'The most unique attribute that Mitch possesses when bringing data to life is the marrying of his business and accounting acumen with his data mining abilities. Mitch can go beyond the surface level of a request and incorporate additional, meaningful data that will add value to the analysis. I would not hesitate to recommend Mitch to any of the clients I work with.',
                 name: 'Travis Hendrick',
-                role: 'Director of Accounting, heavy civil construction',
+                role: 'Director of Finance, Goodfellow Bros Inc.',
               },
             ].map(({ quote, name, role }, i) => (
               <Reveal key={name} delay={(i % 2) * 0.12}>
