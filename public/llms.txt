@@ -13,12 +13,12 @@ Key facts:
 
 What makes KRBI different: most BI consultants start by asking what reports you want. KRBI starts by asking what decisions you need to make and who owns the outcome, then gets Finance, Operations, and IT to agree on metric definitions before building anything.
 
-Client results (from published testimonials):
-- Oregon Ice Cream (VP of Operations, Charles Nutter): KRBI spearheaded Power BI dashboarding and KPI tracking, giving real-time visibility into production and financial performance.
-- Tillamook Cheese (CFO, Linda Pearce): budgeting that took days now takes minutes; the budget was completed weeks ahead of prior years with deeper analysis.
-- A Director of Finance (Kent Walker): KRBI automated the budget upload and reporting process, saving the budget team weeks of work.
-- Smith Brothers (COO, Sebastian Pastore): replaced hundreds of siloed Excel tools with shared BI reporting; 30% YoY loss and waste reduction, roughly $2M in annual savings.
-- Goodfellow Bros Inc. (Director of Finance, Travis Hendrick): Power BI implementation that had stalled for six months internally; KRBI taught itself the ERP and database and shipped the first successful deployment within a month.
+Track record (published testimonials; spans KRBI client engagements and Mitch's prior in-house roles):
+- Smith Brothers (KRBI client; COO, Sebastian Pastore): replaced hundreds of siloed Excel tools with shared BI reporting; 30% YoY loss and waste reduction in six months.
+- Oregon Ice Cream (former employer, current KRBI client; VP of Operations, Charles Nutter): Mitch served as plant controller, implemented Power BI dashboarding and KPI tracking, and continues to manage their Power BI environment as a client engagement today.
+- Tillamook Cheese (prior in-house role; CFO, Linda Pearce): as cost analyst, Mitch rebuilt budget prep, cutting the cycle from weeks to days with versioned budgets and variance reporting.
+- Goodfellow Bros Inc. (prior in-house role; Director of Finance, Travis Hendrick): a Power BI initiative had stalled for six months; Mitch taught himself the ERP and database and shipped the first successful deployment within a month, then built a five-analyst internal BI team.
+- A Director of Finance (Kent Walker): automated budget upload and reporting, saving the budget team weeks of work.
 
 ## Pages
 

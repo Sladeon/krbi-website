@@ -298,8 +298,9 @@ export default function Home() {
                 below. As plant controller at Oregon Ice Cream I implemented Power BI, built the
                 datasets operations actually used (downtime, waste, efficiency, spend), and
                 replaced paper inventory counts with a tablet-and-dashboard program that reconciled
-                in real time. Then four years in heavy civil construction, managing equipment
-                financials and building the company's five-analyst BI team.
+                in real time. Oregon Ice Cream is still a client today: I left the payroll and kept
+                the Power BI. Then four years at Goodfellow Bros in heavy civil construction,
+                managing equipment financials and building the company's five-analyst BI team.
               </p>
               <p>
                 Finance, Operations, and IT rarely speak the same language. I speak all three. I
@@ -332,7 +333,7 @@ export default function Home() {
       <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
           <Reveal>
-            <p className="eyebrow mb-4">Client Voices</p>
+            <p className="eyebrow mb-4">In Their Words</p>
             <h2 className="mb-14 max-w-2xl text-3xl font-bold md:text-4xl">
               Different plants. Different systems. Same outcome.
             </h2>
