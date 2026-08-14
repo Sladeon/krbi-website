@@ -44,13 +44,8 @@ export default function Footer() {
           </p>
           <ul className="space-y-2.5 text-[0.92rem] text-white/70">
             <li>
-              <a href="mailto:mitch@kettleriverbi.com" className="transition-colors hover:text-white">
-                mitch@kettleriverbi.com
-              </a>
-            </li>
-            <li>
-              <a href="tel:+15035239777" className="transition-colors hover:text-white">
-                503.523.9777
+              <a href="mailto:info@kettleriverbi.com" className="transition-colors hover:text-white">
+                info@kettleriverbi.com
               </a>
             </li>
             <li className="pt-1 text-white/45">

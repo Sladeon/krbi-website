@@ -55,8 +55,7 @@ const organizationJsonLd = {
   alternateName: "Kettle River BI",
   url: siteUrl,
   logo: `${siteUrl}/krbi-logo.png`,
-  email: "mitch@kettleriverbi.com",
-  telephone: "+1-503-523-9777",
+  email: "info@kettleriverbi.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Kettle Falls",
