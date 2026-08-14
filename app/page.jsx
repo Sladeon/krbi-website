@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import HeroSection from '@/components/HeroSection';
 import CTABox from '@/components/CTABox';
 import BookingForm from '@/components/BookingForm';
@@ -254,6 +255,79 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---------- FOUNDER ---------- */}
+      <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24 lg:px-8">
+        <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,380px)_1fr] lg:gap-16">
+          <Reveal>
+            <div className="relative mx-auto max-w-sm lg:mx-0">
+              <div
+                aria-hidden
+                className="absolute -left-3 -top-3 h-full w-full rounded-2xl border border-steel/40"
+              />
+              <Image
+                src="/mitch-cauthron.jpg"
+                alt="Mitch Cauthron, founder and principal of Kettle River BI"
+                width={440}
+                height={436}
+                className="relative rounded-2xl"
+              />
+              <p className="mt-5 text-sm text-navy/50">
+                <span className="font-semibold text-navy">Mitch Cauthron</span>
+                <br />
+                Founder &amp; Principal, Kettle River BI
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={0.12}>
+            <p className="eyebrow mb-4">Who You're Hiring</p>
+            <h2 className="mb-6 text-3xl font-bold md:text-4xl">
+              You hire Kettle River BI. You work with me.
+            </h2>
+            <div className="space-y-5 leading-relaxed text-navy/70">
+              <p>
+                I'm Mitch Cauthron. Accountant by training, analyst by temperament. I earned my
+                degree in accounting and business administration in 2010, taught myself SQL and VBA
+                automating reports in healthcare, and have spent the fifteen years since working
+                the seam where Finance, Operations, and IT meet.
+              </p>
+              <p>
+                Over ten of those years were inside manufacturing. At Tillamook I went from staff
+                accountant to cost analyst on the ice cream product line, and rebuilt budget prep
+                so a cycle that took weeks closed in days. That's the story behind the CFO quote
+                below. As plant controller at Oregon Ice Cream I implemented Power BI, built the
+                datasets operations actually used (downtime, waste, efficiency, spend), and
+                replaced paper inventory counts with a tablet-and-dashboard program that reconciled
+                in real time. Then four years in heavy civil construction, managing equipment
+                financials and building the company's five-analyst BI team.
+              </p>
+              <p>
+                Finance, Operations, and IT rarely speak the same language. I speak all three. I
+                teach myself your ERP by reading how the data moves through it, then build
+                reporting your team keeps using after I'm gone.
+              </p>
+              <p className="border-l-2 border-steel pl-5 font-medium text-navy">
+                Kettle River BI is deliberately small. Every engagement is scoped, led, and
+                delivered by me, with project support pulled in when it helps. The person you meet
+                on the discovery call is the person who does the work.
+              </p>
+            </div>
+            <div className="mt-9 grid grid-cols-3 gap-4 border-t border-navy/10 pt-7">
+              {[
+                { value: '15+', label: 'Years in finance and analytics' },
+                { value: '10+', label: 'Years inside manufacturing' },
+                { value: '1', label: 'Point of contact, start to finish' },
+              ].map(({ value, label }) => (
+                <div key={label}>
+                  <p className="text-2xl font-bold text-steel md:text-3xl">{value}</p>
+                  <p className="mt-1 text-[0.8rem] leading-snug text-navy/50">{label}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ---------- TESTIMONIALS ---------- */}
       <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
@@ -287,7 +361,7 @@ export default function Home() {
                 quote:
                   'The most unique attribute that Mitch possesses when bringing data to life is the marrying of his business and accounting acumen with his data mining abilities. Mitch can go beyond the surface level of a request and incorporate additional, meaningful data that will add value to the analysis. I would not hesitate to recommend Mitch to any of the clients I work with.',
                 name: 'Travis Hendrick',
-                role: 'Finance and Construction Professional',
+                role: 'Director of Accounting, heavy civil construction',
               },
             ].map(({ quote, name, role }, i) => (
               <Reveal key={name} delay={(i % 2) * 0.12}>

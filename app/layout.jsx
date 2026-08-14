@@ -66,6 +66,22 @@ const organizationJsonLd = {
   description:
     "Fractional BI analyst and project manager for manufacturers. Data governance, KPI dashboards, and organizational alignment.",
   slogan: "business mastery through business intelligence",
+  founder: {
+    "@type": "Person",
+    name: "Mitch Cauthron",
+    jobTitle: "Founder & Principal",
+    description:
+      "Accountant by training with 15+ years across healthcare, food manufacturing (Tillamook, Oregon Ice Cream), and heavy civil construction. Power BI and SQL practitioner working the seam between Finance, Operations, and IT.",
+    alumniOf: "Accounting and Business Administration, 2010",
+    knowsAbout: [
+      "Power BI",
+      "SQL",
+      "manufacturing cost accounting",
+      "data governance",
+      "budgeting and forecasting automation",
+      "inventory cycle counting",
+    ],
+  },
 };
 
 export default function RootLayout({ children }) {

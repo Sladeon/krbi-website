@@ -86,7 +86,7 @@ export default function CaseStudy() {
                   at them together, they did not reconcile. So we spent half our time figuring out
                   what the numbers meant instead of fixing them."
                   <footer className="mt-3 not-italic text-sm text-navy/50">
-                    Sebastian Pastore, COO
+                    Sebastian Pastore, then COO of Smith Brothers
                   </footer>
                 </blockquote>
               </Reveal>

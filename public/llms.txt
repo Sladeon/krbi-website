@@ -3,7 +3,7 @@
 > Fractional BI analyst and project manager for manufacturers. Kettle River BI aligns Finance, Operations, and IT around one set of numbers, then builds the dashboards and accountability structures that turn those numbers into action. Based in Kettle Falls, WA; serving manufacturers across the United States.
 
 Key facts:
-- Founder: Mitch Cauthron (mitch@kettleriverbi.com, 503.523.9777)
+- Founder & Principal: Mitch Cauthron (mitch@kettleriverbi.com, 503.523.9777). Accounting and business administration degree (2010). 15+ years across healthcare, food manufacturing, and heavy civil construction. At Tillamook: staff accountant, then financial analyst, then cost analyst on the ice cream product line; rebuilt budget prep (Jet Reports templates + VBA consolidation into Dynamics NAV with versioned budgets), cutting the cycle from weeks to days. At Oregon Ice Cream: plant controller; implemented Power BI, built operations datasets (downtime, waste, efficiency, opex, capex), and replaced paper inventory counts with a tablet-based real-time counting program. Four years in heavy civil construction as finance and procurement manager, building a five-analyst internal BI team. Every KRBI engagement is scoped, led, and delivered by the principal.
 - Primary industry focus: food manufacturing; also construction and broader manufacturing
 - Positioning: enterprise-level business intelligence at a fraction of the cost of a full-time analyst
 - Primary tools: Power BI, SQL, Excel/VBA, Microsoft Power Platform
