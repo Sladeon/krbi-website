@@ -4,6 +4,7 @@ import { useState } from 'react';
 import HeroSection from '@/components/HeroSection';
 import CTABox from '@/components/CTABox';
 import BookingForm from '@/components/BookingForm';
+import ChecklistGate from '@/components/ChecklistGate';
 import Reveal from '@/components/Reveal';
 
 const tiers = [
@@ -74,10 +75,12 @@ const findings = [
 
 export default function Governance() {
   const [showForm, setShowForm] = useState(false);
+  const [showChecklist, setShowChecklist] = useState(false);
 
   return (
     <>
       {showForm && <BookingForm onClose={() => setShowForm(false)} />}
+      {showChecklist && <ChecklistGate onClose={() => setShowChecklist(false)} />}
       <HeroSection
         imageSrc="/images/hero-governance.jpg"
         imageAlt="Scattered glass panes converging into one ordered row, representing fragmented data becoming governed data"
@@ -85,6 +88,7 @@ export default function Governance() {
         title="Data does not fail. Definitions do."
         subtitle="Your manufacturing data lives in spreadsheets, accounting systems, and databases that do not talk to each other. The first step is not building a dashboard. It is agreeing on what you are measuring."
         primaryCta={{ label: 'Schedule a Discovery Call', onClick: () => setShowForm(true) }}
+        secondaryCta={{ label: 'Download the Self-Audit Checklist', onClick: () => setShowChecklist(true) }}
       />
 
       <div className="mx-auto max-w-6xl px-6 lg:px-8">
@@ -281,8 +285,29 @@ export default function Governance() {
           </div>
         </section>
 
+        {/* Self-audit band */}
+        <section className="py-4">
+          <Reveal>
+            <div className="flex flex-col items-start justify-between gap-6 rounded-xl bg-cream px-8 py-8 md:flex-row md:items-center md:px-10">
+              <div>
+                <h3 className="mb-1 text-xl font-bold">Run the thirteen checks yourself first.</h3>
+                <p className="text-[0.92rem] text-navy/60">
+                  The same questions we ask in a paid audit, as a free 15-minute self-audit.
+                  Definitions, access, classification, model hygiene.
+                </p>
+              </div>
+              <button
+                onClick={() => setShowChecklist(true)}
+                className="btn-primary flex-shrink-0"
+              >
+                Get the Free Checklist
+              </button>
+            </div>
+          </Reveal>
+        </section>
+
         {/* Two paths */}
-        <section className="border-t border-navy/10 py-20">
+        <section className="border-t-0 py-20">
           <Reveal>
             <p className="eyebrow mb-4">Two Ways In</p>
             <h2 className="mb-12 max-w-2xl text-3xl font-bold">

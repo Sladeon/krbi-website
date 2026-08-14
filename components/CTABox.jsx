@@ -3,7 +3,7 @@ import Reveal from '@/components/Reveal';
 /**
  * Full-width steel blue call-to-action band.
  */
-export default function CTABox({ title, description, ctaText, onClick }) {
+export default function CTABox({ title, description, ctaText, onClick, secondaryText, onSecondaryClick }) {
   return (
     <Reveal as="section" className="my-4">
       <div className="relative overflow-hidden rounded-xl bg-steel px-8 py-14 text-center md:px-16">
@@ -24,6 +24,16 @@ export default function CTABox({ title, description, ctaText, onClick }) {
         >
           {ctaText}
         </button>
+        {secondaryText && (
+          <p className="mt-5">
+            <button
+              onClick={onSecondaryClick}
+              className="text-[0.9rem] font-medium text-white/80 underline decoration-white/40 underline-offset-4 transition-colors hover:text-white hover:decoration-white"
+            >
+              {secondaryText}
+            </button>
+          </p>
+        )}
       </div>
     </Reveal>
   );

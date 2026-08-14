@@ -73,9 +73,15 @@ export default function HeroSection({
               )
             )}
             {secondaryCta && (
-              <a href={secondaryCta.href} className="btn-ghost">
-                {secondaryCta.label}
-              </a>
+              secondaryCta.href ? (
+                <a href={secondaryCta.href} className="btn-ghost">
+                  {secondaryCta.label}
+                </a>
+              ) : (
+                <button onClick={secondaryCta.onClick} className="btn-ghost">
+                  {secondaryCta.label}
+                </button>
+              )
             )}
           </div>
         </div>

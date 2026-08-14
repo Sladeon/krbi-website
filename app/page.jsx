@@ -6,6 +6,7 @@ import Image from 'next/image';
 import HeroSection from '@/components/HeroSection';
 import CTABox from '@/components/CTABox';
 import BookingForm from '@/components/BookingForm';
+import ChecklistGate from '@/components/ChecklistGate';
 import Reveal from '@/components/Reveal';
 
 const faqs = [
@@ -65,6 +66,7 @@ const services = [
 
 export default function Home() {
   const [showForm, setShowForm] = useState(false);
+  const [showChecklist, setShowChecklist] = useState(false);
 
   return (
     <>
@@ -73,6 +75,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       {showForm && <BookingForm onClose={() => setShowForm(false)} />}
+      {showChecklist && <ChecklistGate onClose={() => setShowChecklist(false)} />}
 
       <HeroSection
         tall
@@ -442,6 +445,8 @@ export default function Home() {
           description="If your leadership team spends half its time arguing about numbers instead of acting on them, we've seen the path forward. Schedule a 30-minute discovery call. We'll ask you the same questions we asked our other clients, and you'll see within minutes whether this is the right approach for your organization."
           ctaText="Schedule a 30-Minute Discovery Call"
           onClick={() => setShowForm(true)}
+          secondaryText="Not ready to talk? Download the free governance self-audit checklist"
+          onSecondaryClick={() => setShowChecklist(true)}
         />
       </section>
     </>
