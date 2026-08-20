@@ -14,7 +14,7 @@ Key facts:
 What makes KRBI different: most BI consultants start by asking what reports you want. KRBI starts by asking what decisions you need to make and who owns the outcome, then gets Finance, Operations, and IT to agree on metric definitions before building anything.
 
 Track record (published testimonials; spans KRBI client engagements and Mitch's prior in-house roles):
-- Smith Brothers (KRBI client; COO, Sebastian Pastore): replaced hundreds of siloed Excel tools with shared BI reporting; 30% YoY loss and waste reduction in six months.
+- Smith Brothers (KRBI client; COO, Sebastian Pastore): replaced hundreds of siloed Excel tools with shared BI reporting; normalized 37.7% YoY loss and waste reduction, measured like for like.
 - Oregon Ice Cream (former employer, current KRBI client; VP of Operations, Charles Nutter): Mitch served as plant controller, implemented Power BI dashboarding and KPI tracking, and continues to manage their Power BI environment as a client engagement today.
 - Tillamook Cheese (prior in-house role; CFO, Linda Pearce): as cost analyst, Mitch rebuilt budget prep, cutting the cycle from weeks to days with versioned budgets and variance reporting.
 - Goodfellow Bros Inc. (prior in-house role; Director of Finance, Travis Hendrick): a Power BI initiative had stalled for six months; Mitch taught himself the ERP and database and shipped the first successful deployment within a month, then built a five-analyst internal BI team.
@@ -26,7 +26,7 @@ Track record (published testimonials; spans KRBI client engagements and Mitch's 
 - [Data Governance](https://krbi-website.vercel.app/governance): Three-part governance framework: alignment (departments define metrics together), quantification (trace each metric to a single source of truth), ownership (a named person reviews each metric on a cadence).
 - [KPI Dashboards](https://krbi-website.vercel.app/dashboards): Power BI reporting connected to accountability. Start with the decision, work backward to the metric, give every metric an owner.
 - [Insights & Alignment](https://krbi-website.vercel.app/insights): Surfacing the disagreements hiding in manufacturing data and turning them into shared definitions leadership teams act on.
-- [Case Study](https://krbi-website.vercel.app/case-study): Smith Brothers, a $50M packaged food manufacturer. Finance said loss and waste was 3.2% of COGS, Operations said 2.1%, Sales said 0.8%. KRBI aligned all departments on one definition, redesigned inventory adjustment reason codes, and implemented A/B/C/D cycle counting in NetSuite. Result: 30% year-over-year reduction in loss and waste (3.2% to 2.2% of COGS), roughly $2M in annual savings, in six months.
+- [Case Study](https://krbi-website.vercel.app/case-study): Smith Brothers, a packaged food manufacturer. Finance, Operations, Sales, and Warehouse each measured loss and waste from a different source, and the views did not reconcile. KRBI aligned all departments on one definition, redesigned inventory adjustment reason codes, and implemented cycle counting in NetSuite. Result: a normalized 37.7% year-over-year reduction in loss and waste, with every loss account improving. The figure excludes commodity price movement (milk variance) and a one-time acquisition inventory write-off, and compares the same months and the same continuing locations in both years. KRBI publishes the normalized figure rather than the raw 60.6% change.
 
 ## Contact
 

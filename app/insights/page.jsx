@@ -119,20 +119,20 @@ export default function Insights() {
                 of coordination. That is the shift.
               </p>
               <p className="leading-relaxed text-navy/70">
-                Within six months, loss and waste had declined 30% year-over-year. That $2M in
-                savings did not come from a new system or a new tool. It came from an organization
+                Loss and waste declined 37.7% year over year, on a like-for-like comparison. That
+                reduction did not come from a new system or a new tool. It came from an organization
                 that finally agreed on what the problem was and who was responsible for fixing it.
               </p>
             </Reveal>
             <Reveal delay={0.15}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl border border-navy/10 bg-cream-soft p-8 text-center">
-                  <p className="text-4xl font-bold text-steel">30%</p>
+                  <p className="text-4xl font-bold text-steel">37.7%</p>
                   <p className="mt-2 text-sm text-navy/55">YoY decline in loss and waste</p>
                 </div>
                 <div className="rounded-xl border border-navy/10 bg-cream-soft p-8 text-center">
-                  <p className="text-4xl font-bold text-steel">$2M</p>
-                  <p className="mt-2 text-sm text-navy/55">In annual savings</p>
+                  <p className="text-4xl font-bold text-steel">4 of 4</p>
+                  <p className="mt-2 text-sm text-navy/55">Loss accounts improved</p>
                 </div>
                 <div className="col-span-2 rounded-xl bg-navy p-8 text-center">
                   <p className="text-lg font-semibold text-white">

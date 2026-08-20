@@ -94,8 +94,8 @@ export default function Home() {
         primaryCta={{ label: 'Schedule a Discovery Call', onClick: () => setShowForm(true) }}
         secondaryCta={{ label: 'Read the Case Study', href: '/case-study' }}
         stats={[
-          { value: '30%', label: 'YoY loss & waste reduction' },
-          { value: '$2M', label: 'Annual savings delivered' },
+          { value: '37.7%', label: 'YoY loss & waste reduction' },
+          { value: '4 of 4', label: 'Loss accounts improved' },
           { value: '6 mo', label: 'From kickoff to measurable results' },
         ]}
       />
@@ -107,19 +107,20 @@ export default function Home() {
             <div className="lg:sticky lg:top-28">
               <p className="eyebrow mb-4">The Problem</p>
               <h2 className="text-3xl font-bold md:text-4xl">
-                Same plant. Same quarter. Three different numbers.
+                Same plant. Same quarter. No agreed number.
               </h2>
             </div>
           </Reveal>
 
           <div>
             <Reveal>
-              <div className="mb-10 grid grid-cols-3 gap-3 md:gap-4">
+              <div className="mb-10 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
                 {[
-                  { dept: 'Finance', num: '3.2%', desc: 'of COGS, per the GL' },
-                  { dept: 'Operations', num: '2.1%', desc: 'per production reports' },
-                  { dept: 'Sales', num: '0.8%', desc: 'per customer credits' },
-                ].map(({ dept, num, desc }, i) => (
+                  { dept: 'Finance', src: 'The general ledger' },
+                  { dept: 'Operations', src: 'Production reports' },
+                  { dept: 'Sales', src: 'Customer credits' },
+                  { dept: 'Warehouse', src: 'Inventory variance' },
+                ].map(({ dept, src }) => (
                   <div
                     key={dept}
                     className="rounded-lg border border-navy/10 bg-cream-soft p-4 text-center md:p-6"
@@ -127,8 +128,10 @@ export default function Home() {
                     <p className="text-[0.75rem] font-semibold uppercase tracking-[0.12em] text-bluegrey">
                       {dept}
                     </p>
-                    <p className="my-2 text-3xl font-bold text-steel md:text-4xl">{num}</p>
-                    <p className="text-[0.78rem] leading-snug text-navy/50">{desc}</p>
+                    <p className="mt-3 text-[0.95rem] font-semibold leading-snug text-steel">
+                      {src}
+                    </p>
+                    <p className="mt-2 text-[0.78rem] text-navy/50">Its own number</p>
                   </div>
                 ))}
               </div>
@@ -213,14 +216,15 @@ export default function Home() {
             <Reveal>
               <p className="eyebrow eyebrow-light mb-4">Real Results</p>
               <h2 className="mb-6 text-3xl font-bold !text-white md:text-4xl">
-                30% less loss and waste. In six months.
+                37.7% less loss and waste. Measured like for like.
               </h2>
               <p className="mb-6 leading-relaxed text-white/70">
-                At one food manufacturer, this approach delivered 30% year-over-year improvement in
-                loss and waste metrics within six months. That translated to approximately $2M in
-                measurable savings. More importantly, it replaced a culture of siloed Excel tools
-                and department-versus-department meetings with a team-oriented approach to data and
-                problem-solving.
+                At one food manufacturer, this approach delivered a 37.7% year-over-year reduction in
+                loss and waste, with every loss account improving. That figure is normalized:
+                commodity price movement and a one-time acquisition write-off are excluded, and the
+                same months and locations are compared in both years. More importantly, it replaced
+                a culture of siloed Excel tools and department-versus-department meetings with a
+                team-oriented approach to data and problem-solving.
               </p>
               <p className="mb-9 leading-relaxed text-white/70">
                 Each owner now manages a specific metric and develops plans to improve it. Finance

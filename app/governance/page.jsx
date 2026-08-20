@@ -56,20 +56,20 @@ const roles = [
 
 const findings = [
   {
-    stat: '1',
-    text: 'Departed employee who still held Admin rights on the two highest-risk workspaces, weeks after leaving',
+    stat: 'Access',
+    text: 'Former employees still holding Admin rights weeks after their last day, because offboarding never reached the BI tenant',
   },
   {
-    stat: '24',
-    text: 'Independent, unreconciled copies of the same item master table, each report deriving its own version',
+    stat: 'Drift',
+    text: 'The same core table copied and re-derived across many reports, so every number carries a slightly different lineage',
   },
   {
-    stat: '0',
-    text: 'Security groups on a workspace with 25 individually-granted members and four Admins',
+    stat: 'Grants',
+    text: 'Access handed out one person at a time instead of through security groups, leaving no practical way to audit who can see what',
   },
   {
-    stat: 'PII',
-    text: 'Customer records sitting in the same workspace as marketing dashboards, with no access boundary between them',
+    stat: 'Tiers',
+    text: 'Sensitive records sharing a workspace with general reporting, because a data classification boundary was never set',
   },
 ];
 
@@ -269,8 +269,8 @@ export default function Governance() {
               What our governance audits actually find
             </h2>
             <p className="mb-12 max-w-3xl leading-relaxed text-navy/70">
-              These are real findings from recent BI governance audits at mid-size manufacturers.
-              None of them were visible to leadership until someone went looking.
+              These are the patterns our governance audits turn up most often at mid-size
+              manufacturers. None of them are visible to leadership until someone goes looking.
             </p>
           </Reveal>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -1,12 +1,12 @@
 export const metadata = {
-  title: "Case Study: $2M in Savings at a Food Manufacturer",
+  title: "Case Study: 37.7% Less Loss and Waste at a Food Manufacturer",
   description:
-    "How Kettle River BI aligned Finance, Operations, Sales, and Warehouse at Smith Brothers around one definition of loss and waste, driving 30% YoY improvement in six months.",
+    "How Kettle River BI aligned Finance, Operations, Sales, and Warehouse at Smith Brothers around one definition of loss and waste, driving a normalized 37.7% year-over-year reduction.",
   alternates: { canonical: "/case-study" },
   openGraph: {
-    title: "Case Study: $2M in Savings at a Food Manufacturer | Kettle River BI",
+    title: "Case Study: 37.7% Less Loss and Waste at a Food Manufacturer | Kettle River BI",
     description:
-      "30% YoY loss and waste improvement in six months. From siloed spreadsheets to one shared number.",
+      "A normalized 37.7% year-over-year reduction in loss and waste. From siloed spreadsheets to one shared number.",
     images: [{ url: "/images/hero-case-study.jpg" }],
   },
 };
@@ -14,9 +14,9 @@ export const metadata = {
 const articleJsonLd = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "From Siloed Spreadsheets to $2M in Measurable Savings",
+  headline: "From Siloed Spreadsheets to 37.7% Less Loss and Waste",
   description:
-    "How Kettle River BI aligned Finance, Operations, Sales, and Warehouse at Smith Brothers, a $50M packaged food manufacturer, around one definition of loss and waste: 30% YoY improvement and roughly $2M in annual savings in six months.",
+    "How Kettle River BI aligned Finance, Operations, Sales, and Warehouse at Smith Brothers, a packaged food manufacturer, around one definition of loss and waste. Result: a normalized 37.7% year-over-year reduction, measured like for like with commodity movement and a one-time acquisition write-off excluded.",
   author: {
     "@type": "Organization",
     name: "Kettle River Business Intelligence",
