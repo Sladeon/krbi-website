@@ -20,7 +20,7 @@ const faqs = [
   },
   {
     q: "What's the timeline?",
-    a: "A typical engagement runs four to six months depending on complexity. The discovery call helps us scope it. You'll see measurable progress within the first 90 days."
+    a: "The assessment is two weeks. A Foundation Build runs 30 to 45 days from design sign-off. Longer multi-department engagements can run four to six months, but you see the first working dashboards well before that. The discovery call helps us scope which shape yours is."
   },
   {
     q: "Do you require an ERP system?",
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "What's the investment?",
-    a: "It depends on the scope. A simple governance framework might run $15K–$25K. A full multi-department engagement with reporting infrastructure can be $75K–$150K+. Let's talk on a discovery call."
+    a: "Everything is fixed-price, and the numbers are published. A two-week Data Health Assessment is $5,000 and is credited against a build. A Foundation Build runs $35,000 to $55,000 and is priced from the assessment findings rather than estimated in advance. Managed Intelligence after launch is $3,500 a month. We do not bill hourly. Full detail is on the pricing page."
   }
 ];
 
@@ -420,6 +420,24 @@ export default function Home() {
             </Reveal>
           ))}
         </div>
+
+        {/* Pricing entry point */}
+        <Reveal delay={0.1}>
+          <div className="mt-10 flex flex-col items-start justify-between gap-6 rounded-xl bg-cream px-8 py-8 md:flex-row md:items-center md:px-10">
+            <div>
+              <h3 className="mb-1 text-xl font-bold">
+                Every engagement is fixed-price, and the prices are published.
+              </h3>
+              <p className="text-[0.92rem] text-navy/60">
+                A $5,000 two-week assessment, a $35K to $55K foundation build priced from its
+                findings, and $3,500 a month to keep it running. No hourly rate, anywhere.
+              </p>
+            </div>
+            <Link href="/pricing" className="btn-primary flex-shrink-0">
+              See Pricing
+            </Link>
+          </div>
+        </Reveal>
       </section>
 
       {/* ---------- FAQ ---------- */}

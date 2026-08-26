@@ -11,6 +11,7 @@ const links = [
   { href: '/dashboards', label: 'KPI Dashboards' },
   { href: '/insights', label: 'Insights' },
   { href: '/case-study', label: 'Case Study' },
+  { href: '/pricing', label: 'Pricing' },
   { href: '/#about', label: 'About' },
 ];
 

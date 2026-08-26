@@ -7,8 +7,9 @@ Key facts:
 - Primary industry focus: food manufacturing; also construction and broader manufacturing
 - Positioning: enterprise-level business intelligence at a fraction of the cost of a full-time analyst
 - Primary tools: Power BI, SQL, Excel/VBA, Microsoft Power Platform
-- Typical engagement: 4 to 6 months, measurable progress within the first 90 days
-- Typical investment: $15K-$25K for a governance framework; $75K-$150K+ for a full multi-department engagement
+- Typical engagement: a 2-week assessment, then a 30 to 45 day foundation build, then an ongoing monthly retainer. Measurable progress within the first 90 days.
+- Pricing (fixed-price, published; KRBI does not bill hourly): Data Health Assessment $5,000 fixed for 2 weeks, credited in full against a build signed within 90 days. Foundation Build $35,000-$55,000 fixed for 30 to 45 days, priced from the assessment findings rather than estimated in advance. Managed Intelligence $3,500 per month ongoing ($42,000 a year), covering data quality monitoring, maintenance, and a monthly operations review call. A governance audit of an existing Power BI estate runs as the assessment: same $5,000, findings report and remediation roadmap in 10 business days.
+- Payment terms: 40% on signature, 40% at design sign-off, 20% at reconciled delivery. The final 20% is held until Finance and Operations pull the same report and get the same number.
 - Works with any ERP or none: QuickBooks, NetSuite, SAP, spreadsheets, operational databases
 
 What makes KRBI different: most BI consultants start by asking what reports you want. KRBI starts by asking what decisions you need to make and who owns the outcome, then gets Finance, Operations, and IT to agree on metric definitions before building anything.
@@ -26,6 +27,7 @@ Track record (published testimonials; spans KRBI client engagements and Mitch's 
 - [Data Governance](https://krbi-website.vercel.app/governance): Three-part governance framework: alignment (departments define metrics together), quantification (trace each metric to a single source of truth), ownership (a named person reviews each metric on a cadence).
 - [KPI Dashboards](https://krbi-website.vercel.app/dashboards): Power BI reporting connected to accountability. Start with the decision, work backward to the metric, give every metric an owner.
 - [Insights & Alignment](https://krbi-website.vercel.app/insights): Surfacing the disagreements hiding in manufacturing data and turning them into shared definitions leadership teams act on.
+- [Pricing](https://krbi-website.vercel.app/pricing): What fractional BI costs at Kettle River BI. The three-stage engagement ladder with published fixed prices, the pricing rules (no hourly rate, three options in every proposal, bounded reconciliation scope, client-delay re-baseline, written answer to who maintains the system if KRBI disappears), the 40/40/20 payment schedule, and a pricing FAQ.
 - [Case Study](https://krbi-website.vercel.app/case-study): Smith Brothers, a packaged food manufacturer. Finance, Operations, Sales, and Warehouse each measured loss and waste from a different source, and the views did not reconcile. KRBI aligned all departments on one definition, redesigned inventory adjustment reason codes, and implemented cycle counting in NetSuite. Result: a normalized 37.7% year-over-year reduction in loss and waste, with every loss account improving. The figure excludes commodity price movement (milk variance) and a one-time acquisition inventory write-off, and compares the same months and the same continuing locations in both years. KRBI publishes the normalized figure rather than the raw 60.6% change.
 
 ## Contact
