@@ -7,7 +7,7 @@ export const metadata = {
     title: "Pricing: What Fractional BI Costs | Kettle River BI",
     description:
       "A $5,000 assessment, a $35K-$55K foundation build, and $3,500/mo managed intelligence. Fixed price, fixed timeline, no hourly billing.",
-    images: [{ url: "/images/hero-home.jpg" }],
+    images: [{ url: "/images/hero-pricing.jpg" }],
   },
 };
 

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import HeroSection from '@/components/HeroSection';
 import CTABox from '@/components/CTABox';
 import BookingForm from '@/components/BookingForm';
@@ -137,8 +138,8 @@ export default function Pricing() {
       {showChecklist && <ChecklistGate onClose={() => setShowChecklist(false)} />}
 
       <HeroSection
-        imageSrc="/images/hero-home.jpg"
-        imageAlt="Two workers reviewing production notes together on a food manufacturing floor"
+        imageSrc="/images/hero-pricing.jpg"
+        imageAlt="Three machined metal blocks of ascending height standing in an aligned row, representing a three-stage fixed-price engagement ladder"
         eyebrow="Pricing"
         title="Fixed price. Fixed timeline. No hourly billing."
         subtitle="You should know what this costs before you get on a call with anyone. Here are the three stages, what each one includes, and what each one costs."
@@ -251,6 +252,36 @@ export default function Pricing() {
               </Reveal>
             ))}
           </div>
+        </section>
+
+        {/* Measurement band */}
+        <section className="py-4">
+          <Reveal>
+            <div className="relative overflow-hidden rounded-xl bg-navy">
+              <Image
+                src="/images/pricing-measure.jpg"
+                alt="A precision caliper closing on a machined block, representing pricing a build from measured findings rather than an estimate"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 1152px"
+              />
+              <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/85 to-navy/25" />
+              <div className="relative flex min-h-[400px] items-center md:min-h-[460px]">
+                <div className="max-w-xl px-8 py-14 md:px-14">
+                  <p className="eyebrow eyebrow-light mb-4">Why The Assessment Comes First</p>
+                  <h2 className="mb-5 text-2xl font-bold !text-white md:text-3xl">
+                    We measure the data, then commit to a number.
+                  </h2>
+                  <p className="leading-relaxed text-white/75">
+                    Anyone can quote a build before looking at your data. The quote is a guess, and
+                    the change order arrives later. Two weeks of interviews and source tracing is
+                    what lets us put a fixed number and a fixed date in writing, and it is why we
+                    keep the right to tell you not to build at all.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
         </section>
 
         {/* Governance audit variant */}
