@@ -1,10 +1,10 @@
 export const metadata = {
-  title: "AI Readiness for Manufacturers",
+  title: "AI Readiness Assessment for Manufacturers",
   description:
     "You can't put an AI on numbers your own departments don't agree on. What AI-ready operations data looks like, a free ten-question readiness checklist, and the field description standard KRBI applies to every Power BI model.",
   alternates: { canonical: "/ai-readiness" },
   openGraph: {
-    title: "AI Readiness for Manufacturers | Kettle River BI",
+    title: "AI Readiness Assessment for Manufacturers | Kettle River BI",
     description:
       "Before you connect Copilot, Claude, or an AI agent to your operations data, the data has to agree with itself. Here is what ready looks like.",
     images: [{ url: "/images/hero-insights.jpg" }],
