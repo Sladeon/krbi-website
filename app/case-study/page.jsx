@@ -283,6 +283,31 @@ export default function CaseStudy() {
           </div>
         </section>
 
+        {/* Second number, same lesson */}
+        <section className="border-t border-navy/10 py-20">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+            <Reveal>
+              <div className="lg:sticky lg:top-28">
+                <p className="eyebrow mb-4">Same Client, Second Number</p>
+                <h2 className="text-3xl font-bold">99% or 93%? Both were true.</h2>
+              </div>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="mb-6 leading-relaxed text-navy/70">
+                On-time-in-full at the same manufacturer runs about 99% when you count units
+                delivered and 92 to 94% when you count order lines. Same orders, same months.
+                Neither number is wrong. They answer different questions, and a retailer's
+                scorecard may ask a third one.
+              </p>
+              <p className="border-l-2 border-steel pl-5 font-medium text-navy">
+                The report shows both, labeled, so nobody has to guess which one the headline card
+                means. Ask an AI assistant "what is our OTIF" against an unlabeled model and it
+                picks a grain without telling you.
+              </p>
+            </Reveal>
+          </div>
+        </section>
+
         {/* Testimonial */}
         <section className="border-t border-navy/10 py-20">
           <Reveal>

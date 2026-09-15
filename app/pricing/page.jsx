@@ -12,17 +12,17 @@ import Reveal from '@/components/Reveal';
 const rungs = [
   {
     step: 'Stage 1',
-    name: 'Data Health Assessment',
+    name: 'The Assessment',
     price: '$5,000',
     unit: 'fixed',
     duration: '2 weeks',
     summary:
-      'An honest diagnostic before anyone builds anything. We interview Finance, Operations, and IT, inventory your systems, trace where each number actually comes from, and score what we find.',
+      'Two weeks to the thing you are missing: one number both departments sign, or a count that matches the system, or an honest answer on whether your data can carry an AI. Three doors below, same price, same two weeks.',
     includes: [
-      'Three structured interviews across Finance, Operations, and IT',
-      'A systems and data source inventory at the field level',
-      'A scored rubric covering definitions, accuracy, access, and governance',
-      'A written findings report with a prioritized recommendation',
+      'One reconciled number (or one readiness score) that Finance and Operations both sign',
+      'Every source traced, field by field, so the number holds up in the room',
+      'The two or three process changes that would move it, with a named owner on each',
+      'A written report you keep, and a fixed price for the build if one is warranted',
     ],
     note: 'Credited in full against a Foundation Build signed within 90 days. If the findings do not support a build, we say so and you keep the report.',
     featured: false,
@@ -66,31 +66,33 @@ const rungs = [
   },
 ];
 
-// Three framings of Stage 1. Same price, same two weeks, same credit; different emphasis in the scoring.
+// Three doors into Stage 1, named by the number the buyer is arguing about. Same price, same two weeks,
+// same credit; what changes is what we score hardest and what the fix list leads with.
+// (The governance audit for an existing Power BI estate lives on the governance page.)
 const doors = [
   {
-    eyebrow: 'Starting from scratch',
-    name: 'Data Health Assessment',
-    when: 'You have an ERP, spreadsheets, and reports that do not agree. Nobody has traced where the numbers come from.',
+    eyebrow: 'Every month the numbers start an argument',
+    name: 'Loss & Waste Analysis',
+    when: 'Finance books shrink as a P&L variance. Operations counts waste in units. The board pack is late because the two have to be argued into one, and nobody owns the fix.',
     includes: [
-      'Three structured interviews across Finance, Operations, and IT',
-      'Field-level inventory of every system and source',
-      'Scored rubric: definitions, accuracy, access, governance',
-      'Recommendation on whether a build is warranted, and its price',
+      'One loss-and-waste number Finance and Operations both sign',
+      'Broken out by cause, controllable separated from non-controllable',
+      'A named owner on every line',
+      'The process changes that would move it (reason codes, cycle counts, purchasing), scoped for the build',
     ],
     gate: null,
   },
   {
-    eyebrow: 'Already running Power BI',
-    name: 'Governance Audit',
-    when: 'Power BI grew report by report, or the person who ran it left. Nobody is sure who can see what.',
+    eyebrow: 'The count never matches the system',
+    name: 'Inventory Accuracy Assessment',
+    when: 'Shrink shows up at year-end and nobody saw it coming. Adjustments go in as free-text notes. The freezer holds product the system says is not there.',
     includes: [
-      'Every workspace, member, and role inventoried and scored',
-      'Departed employees and orphaned admins flagged by name',
-      'Data classified into tiers, with the routing each tier needs',
-      'An ordered remediation roadmap your IT team can execute',
+      'Adjustment-code audit, with the standardized reason-code set you should be using',
+      'Count variance by cause and by location',
+      'An A/B/C/D cycle-count plan sized to your SKUs',
+      'What your ERP is already configured to do that nobody uses',
     ],
-    gate: { label: 'Run the free 13-check self-audit first', variant: 'governance' },
+    gate: null,
   },
   {
     eyebrow: 'The board asked about AI',
@@ -136,7 +138,7 @@ const principles = [
 const faqs = [
   {
     q: 'Why does the assessment cost money? Everyone else scopes for free.',
-    a: 'Because a free scoping call produces a sales document and a paid assessment produces a diagnostic. Two weeks of interviews and source tracing is real work, and the output is useful to you whether or not you hire us for the build. It is also how we can quote a fixed price on the build at all. If we sign a Foundation Build within 90 days, the $5,000 comes off that price, so the only way it costs you anything is if we tell you not to build.',
+    a: 'Because a free scoping call produces a sales document and a paid assessment produces a number your departments have signed. Two weeks of interviews and source tracing is real work, and the output is useful to you whether or not you hire us for the build. It is also how we can quote a fixed price on the build at all. If we sign a Foundation Build within 90 days, the $5,000 comes off that price, so the only way it costs you anything is if we tell you not to build.',
   },
   {
     q: 'Why is the Foundation Build a range instead of one number?',
@@ -327,16 +329,17 @@ export default function Pricing() {
         </section>
 
         {/* Three doors into the same assessment */}
-        <section className="border-t border-navy/10 py-20">
+        <section id="assessment" className="scroll-mt-24 border-t border-navy/10 py-20">
           <Reveal>
             <p className="eyebrow mb-4">Three Ways In</p>
             <h2 className="mb-5 max-w-2xl text-3xl font-bold md:text-4xl">
-              Same assessment. Pick the door that matches your situation.
+              Same assessment. Pick the number you argue about most.
             </h2>
             <p className="mb-14 max-w-3xl leading-relaxed text-navy/70">
-              Two weeks, $5,000, credited in full against a build. The interviews and the source
-              tracing are the same. What changes is what we score hardest and what the fix list
-              leads with.
+              These are three of the numbers manufacturers argue about most. If yours is a
+              different one, the assessment works the same way: two weeks, $5,000, credited in
+              full against a build, and one number both departments sign at the end. What changes
+              between doors is what we score hardest and what the fix list leads with.
             </p>
           </Reveal>
           <div className="grid gap-6 lg:grid-cols-3">

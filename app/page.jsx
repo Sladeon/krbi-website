@@ -58,15 +58,15 @@ const faqJsonLd = {
 const situations = [
   {
     href: '/case-study',
-    title: 'Finance and Operations report different numbers for the same thing.',
-    text: 'Month-end turns into a debate about whose spreadsheet is right. We get the definitions agreed and traced to source, build the reporting on top, and fix the processes that feed it.',
+    title: 'Every month the numbers start an argument, and the board pack is late because of it.',
+    text: 'Finance books shrink as a P&L variance. Operations counts waste in units. We get one loss-and-waste number both sides sign, by cause, with an owner on every line, then fix the processes that feed it.',
     cta: 'Read the case study',
   },
   {
-    href: '/governance',
-    title: 'Power BI grew report by report, or the person who ran it left.',
-    text: 'Dozens of workspaces, no owner, former employees still holding admin. We audit what exists, score it, and hand IT an ordered fix list.',
-    cta: 'How the audit works',
+    href: '/pricing#assessment',
+    title: 'The count never matches the system, and shrink shows up at year-end.',
+    text: 'Adjustments go in as free-text notes. The freezer holds product the system says is not there. We audit the codes, find the variance by cause, and set up the cycle counting your ERP can already run.',
+    cta: 'How the assessment works',
   },
   {
     href: '/ai-readiness',
@@ -517,7 +517,7 @@ export default function Home() {
                 Every engagement is fixed-price, and the prices are published.
               </h3>
               <p className="text-[0.92rem] text-navy/60">
-                A $5,000 two-week assessment (data health, governance audit, or AI readiness), a
+                A $5,000 two-week assessment (loss and waste, inventory accuracy, or AI readiness), a
                 $35K to $55K Foundation Build priced from its findings, and $3,500 a month to keep
                 it running. No hourly rate, anywhere.
               </p>

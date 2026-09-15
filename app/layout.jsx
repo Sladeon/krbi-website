@@ -17,24 +17,25 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://krbi-website.vercel
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Manufacturing Business Intelligence Consulting | Kettle River BI",
+    default: "Data-Driven Continuous Improvement for Food Manufacturers | Kettle River BI",
     template: "%s | Kettle River BI",
   },
   description:
-    "Kettle River BI aligns Finance, Operations, and IT around one set of numbers. Data governance, Power BI dashboards, and accountability structures for manufacturers.",
+    "Kettle River BI gets Finance and Operations agreeing on one set of numbers, builds the manufacturing KPI reporting that tracks them, and fixes the processes underneath. Fixed price. Food and beverage manufacturers $30M and up.",
   alternates: { canonical: "/" },
   keywords: [
-    "manufacturing business intelligence",
+    "manufacturing KPIs",
+    "food manufacturing KPIs",
+    "loss and waste analysis",
+    "inventory accuracy",
+    "AI readiness assessment manufacturing",
+    "manufacturing KPI dashboard Power BI",
     "data governance manufacturing",
-    "Power BI consulting",
-    "KPI dashboards",
-    "food manufacturing analytics",
-    "loss and waste reduction",
   ],
   openGraph: {
     type: "website",
     siteName: "Kettle River BI",
-    title: "Manufacturing Business Intelligence Consulting | Kettle River BI",
+    title: "Data-Driven Continuous Improvement for Food Manufacturers | Kettle River BI",
     description:
       "Finance, Operations, and IT finally agree. Kettle River BI aligns manufacturers around one truth and drives measurable outcomes.",
     images: [{ url: "/images/hero-home.jpg", width: 1920, height: 1080 }],
