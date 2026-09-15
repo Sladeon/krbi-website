@@ -32,7 +32,7 @@ export default function Footer() {
           <ul className="space-y-2.5 text-[0.92rem]">
             <li><Link href="/governance" className="text-white/70 transition-colors hover:text-white">Data Governance</Link></li>
             <li><Link href="/dashboards" className="text-white/70 transition-colors hover:text-white">KPI Dashboards</Link></li>
-            <li><Link href="/insights" className="text-white/70 transition-colors hover:text-white">Insights &amp; Alignment</Link></li>
+            <li><Link href="/ai-readiness" className="text-white/70 transition-colors hover:text-white">AI Readiness</Link></li>
             <li><Link href="/case-study" className="text-white/70 transition-colors hover:text-white">Case Study</Link></li>
           </ul>
         </div>

@@ -9,7 +9,7 @@ import BookingForm from '@/components/BookingForm';
 const links = [
   { href: '/governance', label: 'Data Governance' },
   { href: '/dashboards', label: 'KPI Dashboards' },
-  { href: '/insights', label: 'Insights' },
+  { href: '/ai-readiness', label: 'AI Readiness' },
   { href: '/case-study', label: 'Case Study' },
   { href: '/pricing', label: 'Pricing' },
   { href: '/#about', label: 'About' },

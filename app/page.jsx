@@ -12,7 +12,11 @@ import Reveal from '@/components/Reveal';
 const faqs = [
   {
     q: "Do you build dashboards?",
-    a: "We build reporting infrastructure, but only after we've aligned your organization on what to measure. A dashboard without shared definitions is just a fancy Excel file. We focus on the definitions first."
+    a: "Yes. In Power BI, on a governed data layer, so the numbers hold up in the room. The build order matters: definitions first, then the model, then the reports. A dashboard built on numbers Finance and Operations do not agree on is just a faster way to have the same argument."
+  },
+  {
+    q: "What tools do you use, and do we have to buy anything?",
+    a: "Power BI, SQL, and your existing ERP. Most manufacturers already license Power BI through Microsoft 365, so there is usually no new platform to buy and no new vendor to manage. Your IT team owns and maintains the model after we leave; we build it and document it so they can."
   },
   {
     q: "How is this different from other BI consultants?",
@@ -20,7 +24,11 @@ const faqs = [
   },
   {
     q: "What's the timeline?",
-    a: "The assessment is two weeks. A Foundation Build runs 30 to 45 days from design sign-off. Longer multi-department engagements can run four to six months, but you see the first working dashboards well before that. The discovery call helps us scope which shape yours is."
+    a: "The assessment takes two weeks. A Foundation Build is 30 to 45 days from design sign-off, and you have one reconciled number that Finance and Operations both sign at about the eight-week mark. Improvement compounds from there under Managed Intelligence; at Smith Brothers the like-for-like reduction was measured over the following year."
+  },
+  {
+    q: "Is our data ready for AI?",
+    a: "Probably not yet, and that is the normal answer. An AI assistant inherits whatever your data means today. If two departments define a metric differently, it picks one and does not tell you. Readiness comes from the same work we do anyway: agreed definitions, one source per metric, documented fields, governed access. The free ten-question checklist on the AI Readiness page gives you a score in ten minutes."
   },
   {
     q: "Do you require an ERP system?",
@@ -32,7 +40,7 @@ const faqs = [
   },
   {
     q: "What's the investment?",
-    a: "Everything is fixed-price, and the numbers are published. A two-week Data Health Assessment is $5,000 and is credited against a build. A Foundation Build runs $35,000 to $55,000 and is priced from the assessment findings rather than estimated in advance. Managed Intelligence after launch is $3,500 a month. We do not bill hourly. Full detail is on the pricing page."
+    a: "Everything is fixed-price, and the numbers are published. A two-week assessment is $5,000 and is credited against a build. A Foundation Build runs $35,000 to $55,000 and is priced from the assessment findings rather than estimated in advance. Managed Intelligence after launch is $3,500 a month. We do not bill hourly. Full detail is on the pricing page."
   }
 ];
 
@@ -46,27 +54,50 @@ const faqJsonLd = {
   })),
 };
 
-const services = [
+// The three ways the problem shows up, in the buyer's words. Each links to the page that answers it.
+const situations = [
+  {
+    href: '/case-study',
+    title: 'Finance and Operations report different numbers for the same thing.',
+    text: 'Month-end turns into a debate about whose spreadsheet is right. We get the definitions agreed and traced to source, then build the Power BI reporting on top.',
+    cta: 'See how it went at Smith Brothers',
+  },
   {
     href: '/governance',
-    title: 'Data Governance',
-    text: 'One metric, one definition, one owner. We align Finance, Operations, and IT on what the numbers mean before anything gets built.',
+    title: 'Power BI grew report by report, or the person who ran it left.',
+    text: 'Dozens of workspaces, no owner, former employees still holding admin. We audit what exists, score it, and hand IT an ordered fix list.',
+    cta: 'How the audit works',
   },
   {
-    href: '/dashboards',
-    title: 'KPI Dashboards',
-    text: 'Power BI reporting connected to accountability. Every metric has an owner, a cadence, and a decision it exists to force.',
+    href: '/ai-readiness',
+    title: 'The board is asking what the AI plan is.',
+    text: "You can't put an AI on numbers your own departments don't agree on. We get the data ready first, and tell you honestly how far off it is.",
+    cta: 'Check your readiness',
+  },
+];
+
+// Honest value anchor: arithmetic the buyer can redo, not a claim about their plant.
+const costTiles = [
+  {
+    stat: '$375K',
+    title: 'One point of COGS',
+    text: 'At a $50M food manufacturer running 75% cost of goods, one percentage point is $375,000 a year. Loss and waste with no owner does not shrink on its own. Run it with your numbers: revenue, times COGS share, times one point.',
   },
   {
-    href: '/insights',
-    title: 'Insights & Alignment',
-    text: 'We surface the disagreements hiding in your data and turn them into shared definitions your whole leadership team acts on.',
+    stat: 'Weeks',
+    title: 'Hidden labor',
+    text: 'Every spreadsheet whose job is reconciling two reports is skilled hours spent proving a number instead of moving it. Month after month, in every department that keeps one.',
+  },
+  {
+    stat: '0',
+    title: 'Decisions made',
+    text: 'A meeting that argues about whose number is right is a meeting that did not decide anything. The cost is not the hour. It is the quarter that passed before anyone acted.',
   },
 ];
 
 export default function Home() {
   const [showForm, setShowForm] = useState(false);
-  const [showChecklist, setShowChecklist] = useState(false);
+  const [gate, setGate] = useState(null);
 
   return (
     <>
@@ -75,13 +106,13 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       {showForm && <BookingForm onClose={() => setShowForm(false)} />}
-      {showChecklist && <ChecklistGate onClose={() => setShowChecklist(false)} />}
+      {gate && <ChecklistGate variant={gate} onClose={() => setGate(null)} />}
 
       <HeroSection
         tall
         imageSrc="/images/hero-home.jpg"
         imageAlt="Two workers reviewing production notes together on a spotless food manufacturing floor"
-        eyebrow="Manufacturing Business Intelligence"
+        eyebrow="Power BI and Data Foundation for Food Manufacturers"
         title={
           <>
             Your Finance team calls it shrink. Operations calls it waste.{' '}
@@ -90,13 +121,13 @@ export default function Home() {
             </span>
           </>
         }
-        subtitle="Kettle River BI translates between departments, defines clean metrics, and builds the accountability structures that drive real improvement."
+        subtitle="Fixed-price Power BI reporting and a governed data foundation for food and beverage manufacturers from $30M to $300M. One set of numbers Finance and Operations both sign, in eight weeks, on a platform you likely already license."
         primaryCta={{ label: 'Schedule a Discovery Call', onClick: () => setShowForm(true) }}
-        secondaryCta={{ label: 'Read the Case Study', href: '/case-study' }}
+        secondaryCta={{ label: 'See Pricing', href: '/pricing' }}
         stats={[
-          { value: '37.7%', label: 'YoY loss & waste reduction' },
-          { value: '4 of 4', label: 'Loss accounts improved' },
-          { value: '6 mo', label: 'From kickoff to measurable results' },
+          { value: '37.7%', label: 'Less loss and waste at one client, like for like' },
+          { value: '8 wks', label: 'To one number Finance and Ops both sign' },
+          { value: '$5,000', label: 'Fixed-price assessment to start. Credited against the build.' },
         ]}
       />
 
@@ -159,6 +190,56 @@ export default function Home() {
                 questioned, and every improvement stalls.
               </p>
             </Reveal>
+          </div>
+        </div>
+
+        {/* What the disagreement costs */}
+        <Reveal delay={0.1}>
+          <div className="mt-20 border-t border-navy/10 pt-14">
+            <p className="eyebrow mb-4">What It Costs</p>
+            <h3 className="mb-10 max-w-2xl text-2xl font-bold md:text-3xl">
+              The disagreement has a price. Here is how to estimate yours.
+            </h3>
+            <div className="grid gap-6 md:grid-cols-3">
+              {costTiles.map(({ stat, title, text }) => (
+                <div key={title} className="rounded-xl border border-navy/10 bg-cream-soft p-7">
+                  <p className="mb-2 text-3xl font-bold text-steel">{stat}</p>
+                  <h4 className="mb-3 text-lg font-bold">{title}</h4>
+                  <p className="text-[0.92rem] leading-relaxed text-navy/65">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ---------- WHERE IT STARTS ---------- */}
+      <section className="bg-cream-soft">
+        <div className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
+          <Reveal>
+            <p className="eyebrow mb-4">Where It Starts</p>
+            <h2 className="mb-14 max-w-2xl text-3xl font-bold md:text-4xl">
+              Three ways this shows up. One fix underneath.
+            </h2>
+          </Reveal>
+          <div className="grid gap-6 md:grid-cols-3">
+            {situations.map(({ href, title, text, cta }, i) => (
+              <Reveal key={href} delay={i * 0.12}>
+                <Link
+                  href={href}
+                  className="card-lift group flex h-full flex-col rounded-xl border border-navy/10 bg-white p-8"
+                >
+                  <h3 className="mb-4 text-xl font-bold leading-snug transition-colors group-hover:text-steel">
+                    {title}
+                  </h3>
+                  <p className="mb-6 flex-1 text-[0.95rem] leading-relaxed text-navy/65">{text}</p>
+                  <span className="inline-flex items-center gap-2 text-[0.9rem] font-semibold text-steel">
+                    {cta}{' '}
+                    <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
@@ -262,6 +343,46 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ---------- AI READINESS ---------- */}
+      <section className="bg-cream">
+        <div className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
+            <Reveal>
+              <div className="lg:sticky lg:top-28">
+                <p className="eyebrow mb-4">AI Readiness</p>
+                <h2 className="text-3xl font-bold md:text-4xl">
+                  Before you connect an AI to your data.
+                </h2>
+              </div>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <p className="mb-6 text-lg leading-relaxed text-navy/75">
+                Every CFO and COO is being asked what the AI plan is. Copilot sits inside Power BI
+                now. Assistants like Claude can connect straight to a data model and answer
+                questions in plain English. That is real, and it is already on your IT team's desk.
+              </p>
+              <p className="mb-6 leading-relaxed text-navy/70">
+                On a governed model with every field documented, those tools answer correctly. On
+                numbers your own departments disagree about, they answer just as fast, just as
+                confidently, and wrong, to leadership. The foundation we build is the prerequisite.
+                The assistant is the last thing to plug in, and the easiest.
+              </p>
+              <div className="flex flex-col gap-3 sm:flex-row">
+                <Link href="/ai-readiness" className="btn-primary">
+                  What AI-ready data looks like
+                </Link>
+                <button
+                  onClick={() => setGate('ai')}
+                  className="btn-ghost !border-navy/20 !text-navy hover:!bg-cream-soft"
+                >
+                  Take the 10-question checklist
+                </button>
+              </div>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
       {/* ---------- FOUNDER ---------- */}
       <section id="about" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-24 lg:px-8">
         <div className="grid items-start gap-12 lg:grid-cols-[minmax(0,380px)_1fr] lg:gap-16">
@@ -295,31 +416,15 @@ export default function Home() {
             </h2>
             <div className="space-y-5 leading-relaxed text-navy/70">
               <p>
-                I'm Mitch Cauthron. Accountant by training, analyst by temperament. I earned my
-                degree in accounting and business administration in 2010, taught myself SQL and VBA
-                automating reports in healthcare, and have spent the fifteen years since working
-                the seam where Finance, Operations, and IT meet.
-              </p>
-              <p>
-                Over ten of those years were inside manufacturing. At Tillamook I went from staff
-                accountant to cost analyst on the ice cream product line, and rebuilt budget prep
-                so a cycle that took weeks closed in days. That's the story behind the CFO quote
-                below. As plant controller at Oregon Ice Cream I implemented Power BI, built the
-                datasets operations actually used (downtime, waste, efficiency, spend), and
-                replaced paper inventory counts with a tablet-and-dashboard program that reconciled
-                in real time. Oregon Ice Cream is still a client today: I left the payroll and kept
-                the Power BI. Then four years at Goodfellow Bros in heavy civil construction,
-                managing equipment financials and building the company's five-analyst BI team.
-              </p>
-              <p>
-                Finance, Operations, and IT rarely speak the same language. I speak all three. I
-                teach myself your ERP by reading how the data moves through it, then build
-                reporting your team keeps using after I'm gone.
+                Accountant by training. Ten years inside food manufacturing as a cost analyst and
+                plant controller, where I built the Power BI reporting that Operations actually
+                used and Finance actually trusted. Now I do the same work for manufacturers from
+                the outside, and I learn your ERP by reading how the data moves through it.
               </p>
               <p className="border-l-2 border-steel pl-5 font-medium text-navy">
-                Kettle River BI is deliberately small. Every engagement is scoped, led, and
-                delivered by me, with project support pulled in when it helps. The person you meet
-                on the discovery call is the person who does the work.
+                Every engagement is scoped, led, and delivered by me, with project support pulled
+                in when it helps. The person you meet on the discovery call is the person who does
+                the work.
               </p>
             </div>
             <div className="mt-9 grid grid-cols-3 gap-4 border-t border-navy/10 pt-7">
@@ -394,43 +499,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- SERVICES ---------- */}
+      {/* ---------- PRICING ENTRY ---------- */}
       <section className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
         <Reveal>
-          <p className="eyebrow mb-4">What We Do</p>
-          <h2 className="mb-14 max-w-2xl text-3xl font-bold md:text-4xl">
-            Three ways in. One outcome: numbers your whole team trusts.
-          </h2>
-        </Reveal>
-        <div className="grid gap-6 md:grid-cols-3">
-          {services.map(({ href, title, text }, i) => (
-            <Reveal key={href} delay={i * 0.12}>
-              <Link
-                href={href}
-                className="card-lift group flex h-full flex-col rounded-xl border border-navy/10 bg-white p-8"
-              >
-                <h3 className="mb-3 text-xl font-bold transition-colors group-hover:text-steel">
-                  {title}
-                </h3>
-                <p className="mb-6 flex-1 text-[0.95rem] leading-relaxed text-navy/65">{text}</p>
-                <span className="inline-flex items-center gap-2 text-[0.9rem] font-semibold text-steel">
-                  Learn more <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
-                </span>
-              </Link>
-            </Reveal>
-          ))}
-        </div>
-
-        {/* Pricing entry point */}
-        <Reveal delay={0.1}>
-          <div className="mt-10 flex flex-col items-start justify-between gap-6 rounded-xl bg-cream px-8 py-8 md:flex-row md:items-center md:px-10">
+          <div className="flex flex-col items-start justify-between gap-6 rounded-xl bg-cream px-8 py-8 md:flex-row md:items-center md:px-10">
             <div>
               <h3 className="mb-1 text-xl font-bold">
                 Every engagement is fixed-price, and the prices are published.
               </h3>
               <p className="text-[0.92rem] text-navy/60">
-                A $5,000 two-week assessment, a $35K to $55K foundation build priced from its
-                findings, and $3,500 a month to keep it running. No hourly rate, anywhere.
+                A $5,000 two-week assessment (data health, governance audit, or AI readiness), a
+                $35K to $55K Foundation Build priced from its findings, and $3,500 a month to keep
+                it running. No hourly rate, anywhere.
               </p>
             </div>
             <Link href="/pricing" className="btn-primary flex-shrink-0">
@@ -465,12 +545,12 @@ export default function Home() {
       {/* ---------- FINAL CTA ---------- */}
       <section id="book" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-20 lg:px-8">
         <CTABox
-          title="Ready to align your organization?"
-          description="If your leadership team spends half its time arguing about numbers instead of acting on them, we've seen the path forward. Schedule a 30-minute discovery call. We'll ask you the same questions we asked our other clients, and you'll see within minutes whether this is the right approach for your organization."
+          title="Stop arguing about the number. Start moving it."
+          description="If your leadership team spends half its meetings deciding whose spreadsheet is right, a 30-minute discovery call will tell you whether this fits. We ask the same questions we asked Smith Brothers, and you will know within minutes whether a $5,000 assessment is worth two weeks of your team's time."
           ctaText="Schedule a 30-Minute Discovery Call"
           onClick={() => setShowForm(true)}
           secondaryText="Not ready to talk? Download the free governance self-audit checklist"
-          onSecondaryClick={() => setShowChecklist(true)}
+          onSecondaryClick={() => setGate('governance')}
         />
       </section>
     </>

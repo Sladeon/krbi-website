@@ -15,9 +15,9 @@ export default function Dashboards() {
       <HeroSection
         imageSrc="/images/hero-dashboards.jpg"
         imageAlt="Engineer reviewing a wall-mounted KPI dashboard in a dim manufacturing operations room"
-        eyebrow="KPI Dashboards"
-        title="A dashboard is only as useful as the owner who acts on it."
-        subtitle="You have data. You have dashboards. Nothing changes. That's because your reporting infrastructure isn't connected to accountability. We build the feedback loops that turn dashboards into action."
+        eyebrow="Power BI KPI Dashboards"
+        title="A Power BI dashboard is only as useful as the owner who acts on it."
+        subtitle="You have data. You probably already license Power BI. Nothing changes, because the reporting isn't connected to accountability. We build the feedback loops that turn dashboards into action, on the platform your team already has."
         primaryCta={{ label: 'Schedule a Dashboard Discovery Call', onClick: () => setShowForm(true) }}
       />
 
@@ -36,9 +36,15 @@ export default function Dashboards() {
                 Operations owns their OEE number. Finance owns the P&amp;L. Sales owns revenue and
                 credits. Nobody owns the connection between them.
               </p>
-              <p className="border-l-2 border-steel pl-5 font-medium text-navy">
+              <p className="mb-6 border-l-2 border-steel pl-5 font-medium text-navy">
                 A dashboard that sits in isolation cannot solve this. You need reporting that
                 connects metrics across departments and creates shared accountability.
+              </p>
+              <p className="leading-relaxed text-navy/70">
+                We build in Power BI. Most manufacturers already license it through Microsoft 365,
+                so there is no new platform to buy, no new vendor to manage, and your IT team owns
+                the model when we hand it over. Every field is documented, so the tooltip a plant
+                manager reads and the definition an AI assistant reads are the same sentence.
               </p>
             </Reveal>
           </div>

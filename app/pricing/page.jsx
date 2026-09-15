@@ -36,11 +36,12 @@ const rungs = [
     summary:
       'The governed data layer and the standard dashboard set, built on the definitions your departments agreed to in the assessment. A fixed menu, not a blank canvas.',
     includes: [
-      'A governed data layer with one source of truth per metric',
+      'A governed Power BI data layer with one source of truth per metric',
       'The standard dashboard set: financial, operations, and labor',
+      'Every field described in plain English, so your people and your AI assistants read the same definition',
       'Data classification, workspace structure, and security groups',
       'Named owners and a review cadence for every metric',
-      'A documentation and handoff packet your team keeps',
+      'A documentation and handoff packet your IT team keeps and maintains',
     ],
     note: 'Priced from your assessment findings, not from a guess. That is why the assessment comes first, and why we keep the right to reprice or decline a build when the assessment turns up a swamp.',
     featured: true,
@@ -61,6 +62,46 @@ const rungs = [
     ],
     note: '$42,000 a year, all in. No recruiting, no benefits, no payroll taxes, and no six-month ramp while a new hire learns your ERP.',
     featured: false,
+  },
+];
+
+// Three framings of Stage 1. Same price, same two weeks, same credit; different emphasis in the scoring.
+const doors = [
+  {
+    eyebrow: 'Starting from scratch',
+    name: 'Data Health Assessment',
+    when: 'You have an ERP, spreadsheets, and reports that do not agree. Nobody has traced where the numbers come from.',
+    includes: [
+      'Three structured interviews across Finance, Operations, and IT',
+      'Field-level inventory of every system and source',
+      'Scored rubric: definitions, accuracy, access, governance',
+      'Recommendation on whether a build is warranted, and its price',
+    ],
+    gate: null,
+  },
+  {
+    eyebrow: 'Already running Power BI',
+    name: 'Governance Audit',
+    when: 'Power BI grew report by report, or the person who ran it left. Nobody is sure who can see what.',
+    includes: [
+      'Every workspace, member, and role inventoried and scored',
+      'Departed employees and orphaned admins flagged by name',
+      'Data classified into tiers, with the routing each tier needs',
+      'An ordered remediation roadmap your IT team can execute',
+    ],
+    gate: { label: 'Run the free 13-check self-audit first', variant: 'governance' },
+  },
+  {
+    eyebrow: 'The board asked about AI',
+    name: 'AI Readiness Assessment',
+    when: 'Someone wants to connect Copilot or an AI assistant to your data, and you need to know if the data can carry it.',
+    includes: [
+      'Readiness scored on the four things an AI depends on: agreed definitions, one source per metric, documented fields, governed access',
+      'Share of your model that is actually documented, field by field',
+      'The metrics an assistant would get wrong today, and why',
+      'What to fix first, before any AI project is funded',
+    ],
+    gate: { label: 'Take the free 10-question checklist first', variant: 'ai' },
   },
 ];
 
@@ -126,7 +167,7 @@ const faqJsonLd = {
 
 export default function Pricing() {
   const [showForm, setShowForm] = useState(false);
-  const [showChecklist, setShowChecklist] = useState(false);
+  const [gate, setGate] = useState(null);
 
   return (
     <>
@@ -135,7 +176,7 @@ export default function Pricing() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       {showForm && <BookingForm onClose={() => setShowForm(false)} />}
-      {showChecklist && <ChecklistGate onClose={() => setShowChecklist(false)} />}
+      {gate && <ChecklistGate variant={gate} onClose={() => setGate(null)} />}
 
       <HeroSection
         imageSrc="/images/hero-pricing.jpg"
@@ -284,49 +325,55 @@ export default function Pricing() {
           </Reveal>
         </section>
 
-        {/* Governance audit variant */}
+        {/* Three doors into the same assessment */}
         <section className="border-t border-navy/10 py-20">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.6fr]">
-            <Reveal>
-              <div className="lg:sticky lg:top-28">
-                <p className="eyebrow mb-4">Already Running BI</p>
-                <h2 className="text-3xl font-bold">The Governance Audit</h2>
-              </div>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <p className="mb-6 leading-relaxed text-navy/70">
-                If you already have Power BI and the problem is that it grew report by report, the
-                assessment runs as a governance audit instead. Same two weeks, same $5,000, same
-                credit against a build. Every workspace, member, role, and dataset gets inventoried
-                and scored against a written policy.
-              </p>
-              <div className="mb-6 grid gap-3 sm:grid-cols-2">
-                {[
-                  'Every workspace, member, and role inventoried and scored',
-                  'Orphaned admins and departed employees flagged by name',
-                  'Data classified into tiers, with the routing each tier needs',
-                  'An ordered remediation roadmap your IT team can execute',
-                ].map((t) => (
-                  <div key={t} className="rounded-xl border border-navy/10 bg-cream-soft p-5">
-                    <p className="text-[0.88rem] leading-relaxed text-navy/70">{t}</p>
-                  </div>
-                ))}
-              </div>
-              <p className="border-l-2 border-steel pl-5 font-medium text-navy">
-                Findings report and remediation roadmap delivered in 10 business days from the day
-                we have access.
-              </p>
-              <p className="mt-7">
-                <button
-                  onClick={() => setShowChecklist(true)}
-                  className="inline-flex items-center gap-2 text-[0.92rem] font-semibold text-steel underline decoration-steel/40 underline-offset-4 transition-colors hover:decoration-steel"
-                >
-                  Run the free 13-check self-audit first
-                  <span aria-hidden>→</span>
-                </button>
-              </p>
-            </Reveal>
+          <Reveal>
+            <p className="eyebrow mb-4">Three Ways In</p>
+            <h2 className="mb-5 max-w-2xl text-3xl font-bold md:text-4xl">
+              Same assessment. Pick the door that matches your situation.
+            </h2>
+            <p className="mb-14 max-w-3xl leading-relaxed text-navy/70">
+              Two weeks, $5,000, credited in full against a build. The interviews and the source
+              tracing are the same. What changes is what we score hardest and what the fix list
+              leads with.
+            </p>
+          </Reveal>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {doors.map(({ eyebrow, name, when, includes, gate }, i) => (
+              <Reveal key={name} delay={i * 0.1}>
+                <div className="card-lift flex h-full flex-col rounded-xl border border-navy/10 bg-white p-8">
+                  <p className="mb-4 text-[0.78rem] font-bold uppercase tracking-[0.14em] text-steel">
+                    {eyebrow}
+                  </p>
+                  <h3 className="mb-3 text-xl font-bold">{name}</h3>
+                  <p className="mb-6 text-[0.92rem] leading-relaxed text-navy/65">{when}</p>
+                  <ul className="mb-6 flex-1 space-y-3">
+                    {includes.map((item) => (
+                      <li key={item} className="flex gap-3">
+                        <span aria-hidden className="mt-[7px] h-1.5 w-1.5 flex-shrink-0 rotate-45 bg-steel" />
+                        <span className="text-[0.88rem] leading-relaxed text-navy/70">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {gate && (
+                    <button
+                      onClick={() => setGate(gate.variant)}
+                      className="inline-flex items-center gap-2 self-start text-[0.9rem] font-semibold text-steel underline decoration-steel/40 underline-offset-4 transition-colors hover:decoration-steel"
+                    >
+                      {gate.label}
+                      <span aria-hidden>→</span>
+                    </button>
+                  )}
+                </div>
+              </Reveal>
+            ))}
           </div>
+          <Reveal delay={0.1}>
+            <p className="mt-10 border-l-2 border-steel pl-5 font-medium text-navy">
+              Findings report and prioritized fix list delivered in 10 business days from the day we
+              have access, whichever door you come through.
+            </p>
+          </Reveal>
         </section>
 
         {/* Pricing principles */}
@@ -429,7 +476,7 @@ export default function Pricing() {
             ctaText="Schedule a 30-Minute Discovery Call"
             onClick={() => setShowForm(true)}
             secondaryText="Not ready to talk? Download the free governance self-audit checklist"
-            onSecondaryClick={() => setShowChecklist(true)}
+            onSecondaryClick={() => setGate('governance')}
           />
         </section>
 

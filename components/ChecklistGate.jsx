@@ -3,14 +3,49 @@
 import { useState, useEffect, useCallback } from 'react';
 import { supabase } from '@/lib/supabase';
 
-const PDF_PATH = '/downloads/krbi-governance-self-audit.pdf';
-
 /**
- * Email gate for the Data Governance Self-Audit checklist.
+ * Email gate for downloadable PDFs. One component, three documents.
  * Captures the lead into the same Supabase `leads` table (tagged via pain_point),
  * then hands over the PDF. Download is never blocked by a failed insert.
  */
-export default function ChecklistGate({ onClose }) {
+const VARIANTS = {
+  governance: {
+    title: 'Data Governance Self-Audit',
+    intro:
+      'The same thirteen questions we ask in a paid audit: definitions, access, classification, and model hygiene. Score yourself in fifteen minutes.',
+    success:
+      'Thirteen checks, fifteen minutes. Be honest with the boxes; nobody sees your score but you.',
+    button: 'Get the Checklist',
+    download: 'Download the Checklist (PDF)',
+    pdf: '/downloads/krbi-governance-self-audit.pdf',
+    tag: 'Downloaded: Data Governance Self-Audit Checklist',
+  },
+  ai: {
+    title: 'Manufacturing AI Readiness Checklist',
+    intro:
+      'Ten yes-or-no questions that tell you whether your operations data can carry an AI, and what to fix first if it cannot. Ten minutes, honest scoring.',
+    success:
+      'Ten questions, ten minutes. Count your yes answers; the scoring guide tells you where you stand.',
+    button: 'Get the Checklist',
+    download: 'Download the Checklist (PDF)',
+    pdf: '/downloads/krbi-ai-readiness-checklist.pdf',
+    tag: 'Downloaded: AI Readiness Checklist',
+  },
+  descriptions: {
+    title: 'Field Description Standard',
+    intro:
+      'The exact format we use to document every field in a Power BI model, so your people and your AI assistants read the same definition. Format, rules, and worked examples.',
+    success:
+      'Hand it to whoever maintains your model. It works on any semantic model, not just ours.',
+    button: 'Get the Standard',
+    download: 'Download the Standard (PDF)',
+    pdf: '/downloads/krbi-field-description-standard.pdf',
+    tag: 'Downloaded: Field Description Standard',
+  },
+};
+
+export default function ChecklistGate({ onClose, variant = 'governance' }) {
+  const v = VARIANTS[variant] || VARIANTS.governance;
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({ name: '', email: '', company: '' });
@@ -40,9 +75,7 @@ export default function ChecklistGate({ onClose }) {
     e.preventDefault();
     setLoading(true);
     try {
-      const { error } = await supabase.from('leads').insert([
-        { ...formData, pain_point: 'Downloaded: Data Governance Self-Audit Checklist' },
-      ]);
+      const { error } = await supabase.from('leads').insert([{ ...formData, pain_point: v.tag }]);
       if (error) throw error;
     } catch (error) {
       console.error('Lead capture failed, delivering download anyway:', error);
@@ -85,12 +118,9 @@ export default function ChecklistGate({ onClose }) {
               </svg>
             </div>
             <h3 className="mb-2 text-2xl font-bold text-navy">It's yours.</h3>
-            <p className="mb-6 text-[0.92rem] leading-relaxed text-navy/60">
-              Thirteen checks, fifteen minutes. Be honest with the boxes; nobody sees your score
-              but you.
-            </p>
-            <a href={PDF_PATH} download className="btn-primary w-full">
-              Download the Checklist (PDF)
+            <p className="mb-6 text-[0.92rem] leading-relaxed text-navy/60">{v.success}</p>
+            <a href={v.pdf} download className="btn-primary w-full">
+              {v.download}
             </a>
             <button
               type="button"
@@ -104,12 +134,9 @@ export default function ChecklistGate({ onClose }) {
           <>
             <p className="eyebrow mb-2">Free download</p>
             <h3 id="checklist-title" className="mb-1 text-2xl font-bold text-navy">
-              Data Governance Self-Audit
+              {v.title}
             </h3>
-            <p className="mb-6 text-[0.9rem] text-navy/55">
-              The same thirteen questions we ask in a paid audit: definitions, access,
-              classification, and model hygiene. Score yourself in fifteen minutes.
-            </p>
+            <p className="mb-6 text-[0.9rem] text-navy/55">{v.intro}</p>
 
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -148,7 +175,7 @@ export default function ChecklistGate({ onClose }) {
                 />
               </div>
               <button type="submit" disabled={loading} className="btn-primary w-full disabled:opacity-50">
-                {loading ? 'One moment...' : 'Get the Checklist'}
+                {loading ? 'One moment...' : v.button}
               </button>
               <p className="text-center text-[0.78rem] text-navy/40">
                 No spam. No newsletter you didn't ask for.
