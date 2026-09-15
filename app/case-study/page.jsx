@@ -69,7 +69,7 @@ export default function CaseStudy() {
                       <p className="mt-3 text-[0.95rem] font-semibold leading-snug text-steel">
                         {src}
                       </p>
-                      <p className="mt-2 text-[0.78rem] text-navy/50">Its own number</p>
+                      <p className="mt-2 text-[0.78rem] text-navy/50">One piece of it</p>
                     </div>
                   ))}
                 </div>
@@ -80,12 +80,16 @@ export default function CaseStudy() {
                   they could not quite name. The CFO could tell you the P&amp;L impact of loss and
                   waste. Operations could tell you production-floor inefficiencies. The warehouse
                   team could tell you inventory variance. Sales could tell you customer credits.
-                  None of them could tell you the same number.
+                  Each of them was right about their piece. Nobody owned the whole. There was no
+                  shared definition of loss and waste across the company, no agreed scope, and no
+                  way to hold the total against a budget.
                 </p>
                 <p className="leading-relaxed text-navy/70">
-                  Each function had built its own tooling to answer its own questions. Individually
-                  the reports were defensible. Side by side they did not reconcile, so a meeting
-                  about reducing loss became a meeting about whose number was right.
+                  Each function had built its own tooling to answer its own questions, and each
+                  report was defensible on its own terms. Sales tracked credits. Operations tracked
+                  scrap. Neither had a reason to count the other&apos;s. Added together they did not
+                  make a company number, so a meeting about reducing loss became a meeting about
+                  what counted.
                 </p>
               </Reveal>
             </div>
