@@ -457,9 +457,13 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-6 py-24 lg:px-8">
           <Reveal>
             <p className="eyebrow mb-4">In Their Words</p>
-            <h2 className="mb-14 max-w-2xl text-3xl font-bold md:text-4xl">
+            <h2 className="mb-5 max-w-2xl text-3xl font-bold md:text-4xl">
               Different plants. Different systems. Same outcome.
             </h2>
+            <p className="mb-14 max-w-2xl leading-relaxed text-navy/65">
+              Three of these people worked alongside Mitch in-house, before Kettle River BI
+              existed. One is a client today. Each card says which.
+            </p>
           </Reveal>
           <div className="grid gap-6 md:grid-cols-2">
             {[
@@ -468,26 +472,30 @@ export default function Home() {
                   'We lacked effective BI and KPI tools to monitor production and financial performance. Kettle River BI spearheaded the adoption of Power BI dashboarding and KPI tracking for us. With the new custom solution, we have real-time visibility into our operations, enabling data-driven decisions and continuous improvement strategies to thrive in our business.',
                 name: 'Charles Nutter',
                 role: 'VP of Operations, Oregon Ice Cream',
+                context: 'KRBI client engagement',
               },
               {
                 quote:
                   'Previously, what took days now can be done in minutes. As a result, the budget was completed weeks ahead of what had been done in the past allowing for a deeper analysis than has ever been done before!',
                 name: 'Linda Pearce',
                 role: 'CFO, Tillamook Cheese',
+                context: 'Prior in-house role',
               },
               {
                 quote:
                   "Kettle River BI automated our company's budget upload and reporting process. The budgeting tools he created were highly functional and incredibly intuitive. Thanks to Mitch's efforts, the data gathering process that had been disjointed and confusing became seamless. Our new, highly automated budgeting process literally saved our budget team weeks of hard work!",
                 name: 'Kent Walker',
                 role: 'Director of Finance',
+                context: 'Prior in-house role',
               },
               {
                 quote:
                   'The most unique attribute that Mitch possesses when bringing data to life is the marrying of his business and accounting acumen with his data mining abilities. Mitch can go beyond the surface level of a request and incorporate additional, meaningful data that will add value to the analysis. I would not hesitate to recommend Mitch to any of the clients I work with.',
                 name: 'Travis Hendrick',
                 role: 'Director of Finance, Goodfellow Bros Inc.',
+                context: 'Prior in-house role',
               },
-            ].map(({ quote, name, role }, i) => (
+            ].map(({ quote, name, role, context }, i) => (
               <Reveal key={name} delay={(i % 2) * 0.12}>
                 <figure className="card-lift flex h-full flex-col rounded-xl border border-navy/10 bg-white p-8">
                   <svg width="28" height="22" viewBox="0 0 36 28" fill="none" className="mb-5 flex-shrink-0" aria-hidden>
@@ -500,6 +508,16 @@ export default function Home() {
                     <span className="font-semibold text-navy">{name}</span>
                     <br />
                     {role}
+                    <br />
+                    <span
+                      className={`mt-2.5 inline-block rounded-full px-2.5 py-0.5 text-[0.68rem] font-semibold uppercase tracking-[0.12em] ${
+                        context === 'KRBI client engagement'
+                          ? 'bg-steel/12 text-steel-deep'
+                          : 'bg-navy/[0.06] text-navy/55'
+                      }`}
+                    >
+                      {context}
+                    </span>
                   </figcaption>
                 </figure>
               </Reveal>

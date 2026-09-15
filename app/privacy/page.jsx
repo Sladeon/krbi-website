@@ -123,16 +123,6 @@ const sections = [
     ),
   },
   {
-    id: 'children',
-    title: 'Children',
-    body: (
-      <p>
-        This site is for people who run manufacturing businesses. It is not directed at anyone
-        under 18, and we do not knowingly collect information from them.
-      </p>
-    ),
-  },
-  {
     id: 'changes',
     title: 'Changes to this policy',
     body: (

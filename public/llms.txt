@@ -20,7 +20,7 @@ Track record (published testimonials; spans KRBI client engagements and Mitch's 
 - Oregon Ice Cream (former employer, current KRBI client; VP of Operations, Charles Nutter): Mitch served as plant controller, implemented Power BI dashboarding and KPI tracking, and continues to manage their Power BI environment as a client engagement today.
 - Tillamook Cheese (prior in-house role; CFO, Linda Pearce): as cost analyst, Mitch rebuilt budget prep, cutting the cycle from weeks to days with versioned budgets and variance reporting.
 - Goodfellow Bros Inc. (prior in-house role; Director of Finance, Travis Hendrick): a Power BI initiative had stalled for six months; Mitch taught himself the ERP and database and shipped the first successful deployment within a month, then built a five-analyst internal BI team.
-- A Director of Finance (Kent Walker): automated budget upload and reporting, saving the budget team weeks of work.
+- A Director of Finance from a prior in-house role (Kent Walker): automated budget upload and reporting, saving the budget team weeks of work.
 
 ## Pages
 
