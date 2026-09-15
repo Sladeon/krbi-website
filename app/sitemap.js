@@ -8,5 +8,6 @@ export default function sitemap() {
     { url: `${siteUrl}/ai-readiness`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${siteUrl}/case-study`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${siteUrl}/pricing`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
+    { url: `${siteUrl}/privacy`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.2 },
   ];
 }

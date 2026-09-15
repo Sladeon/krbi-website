@@ -178,7 +178,15 @@ export default function ChecklistGate({ onClose, variant = 'governance' }) {
                 {loading ? 'One moment...' : v.button}
               </button>
               <p className="text-center text-[0.78rem] text-navy/40">
-                No spam. No newsletter you didn't ask for.
+                No spam. No newsletter you didn't ask for.{' '}
+                <a
+                  href="/privacy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-navy/70"
+                >
+                  Privacy
+                </a>
               </p>
             </form>
           </>

@@ -59,7 +59,11 @@ export default function Footer() {
 
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 py-6 text-[0.82rem] text-white/40 md:flex-row lg:px-8">
-          <p>© 2026 Kettle River Business Intelligence. All rights reserved.</p>
+          <p>
+            © 2026 Kettle River Business Intelligence. All rights reserved.
+            <span className="mx-2 text-white/20">|</span>
+            <Link href="/privacy" className="transition-colors hover:text-white">Privacy</Link>
+          </p>
           <p>Data Governance · Power BI · Organizational Alignment · KPI Strategy</p>
         </div>
       </div>
