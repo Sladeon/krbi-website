@@ -15,7 +15,7 @@ export default function CaseStudy() {
       <HeroSection
         imageSrc="/images/hero-case-study.jpg"
         imageAlt="Minimal declining trend curve representing a 37.7 percent year-over-year loss and waste reduction"
-        eyebrow="Case Study · Smith Brothers"
+        eyebrow="Case Study · Packaged Food Manufacturer"
         title="From siloed spreadsheets to 37.7% less loss and waste."
         subtitle="How we aligned Finance, Operations, Sales, and Warehouse around one definition of loss and waste. The reduction is measured like for like, with commodity price movement and a one-time acquisition write-off stripped out of the comparison."
         primaryCta={{ label: 'Explore a Similar Engagement', onClick: () => setShowForm(true) }}
@@ -31,10 +31,10 @@ export default function CaseStudy() {
         <section className="py-14">
           <Reveal>
             <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-3 rounded-xl border border-navy/10 bg-cream-soft px-8 py-6 text-center text-[0.9rem] text-navy/60">
-              <span><strong className="text-navy">Smith Brothers</strong></span>
-              <span>Packaged food manufacturer</span>
+              <span><strong className="text-navy">Packaged food manufacturer</strong></span>
               <span>Pacific Northwest</span>
               <span>NetSuite ERP</span>
+              <span>Reference available on request</span>
             </div>
           </Reveal>
         </section>
@@ -76,7 +76,7 @@ export default function CaseStudy() {
               </Reveal>
               <Reveal delay={0.1}>
                 <p className="mb-6 leading-relaxed text-navy/70">
-                  When we first met with the leadership team at Smith Brothers, they had a problem
+                  When we first met with the leadership team, they had a problem
                   they could not quite name. The CFO could tell you the P&amp;L impact of loss and
                   waste. Operations could tell you production-floor inefficiencies. The warehouse
                   team could tell you inventory variance. Sales could tell you customer credits.
@@ -230,15 +230,9 @@ export default function CaseStudy() {
                     muted: true,
                   },
                   {
-                    stage: 'Less commodity price movement',
-                    pct: 61.5,
-                    note: 'Milk variance tracks the commodity market, not operations. Removing it raises the number, so we removed it anyway.',
-                    muted: true,
-                  },
-                  {
-                    stage: 'Less a one-time acquisition write-off',
+                    stage: 'Less commodity price movement and a one-time acquisition write-off',
                     pct: 37.7,
-                    note: 'Inventory booked at an acquired facility that did not physically exist. An accounting correction, not an operational win.',
+                    note: 'Milk variance tracks the commodity market, not operations. The write-off was inventory booked at an acquired facility that did not physically exist. Neither was earned on the plant floor, so both come out.',
                     muted: false,
                   },
                 ].map(({ stage, pct, note, muted }) => (
@@ -314,9 +308,13 @@ export default function CaseStudy() {
                 </p>
               </blockquote>
               <figcaption className="mt-8 text-sm text-white/50">
-                <span className="font-semibold text-white/85">Sebastian Pastore</span>
+                <span className="font-semibold text-white/85">Chief Operating Officer</span>
                 <br />
-                COO, Smith Brothers
+                Packaged food manufacturer, Pacific Northwest
+                <br />
+                <span className="text-steel-soft">
+                  Available as a reference for prospective clients. Ask us on the discovery call.
+                </span>
               </figcaption>
             </figure>
           </Reveal>

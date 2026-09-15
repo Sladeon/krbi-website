@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: "What's the timeline?",
-    a: "The assessment takes two weeks. A Foundation Build is 30 to 45 days from design sign-off, and you have one reconciled number that Finance and Operations both sign at about the eight-week mark. Improvement compounds from there under Managed Intelligence; at Smith Brothers the like-for-like reduction was measured over the following year."
+    a: "The assessment takes two weeks. A Foundation Build is 30 to 45 days from design sign-off, and you have one reconciled number that Finance and Operations both sign at about the eight-week mark. Improvement compounds from there under Managed Intelligence; in the case study, the like-for-like reduction was measured over the following year."
   },
   {
     q: "Is our data ready for AI?",
@@ -59,8 +59,8 @@ const situations = [
   {
     href: '/case-study',
     title: 'Finance and Operations report different numbers for the same thing.',
-    text: 'Month-end turns into a debate about whose spreadsheet is right. We get the definitions agreed and traced to source, then build the Power BI reporting on top.',
-    cta: 'See how it went at Smith Brothers',
+    text: 'Month-end turns into a debate about whose spreadsheet is right. We get the definitions agreed and traced to source, build the reporting on top, and fix the processes that feed it.',
+    cta: 'Read the case study',
   },
   {
     href: '/governance',
@@ -112,7 +112,7 @@ export default function Home() {
         tall
         imageSrc="/images/hero-home.jpg"
         imageAlt="Two workers reviewing production notes together on a spotless food manufacturing floor"
-        eyebrow="Power BI and Data Foundation for Food Manufacturers"
+        eyebrow="Data-Driven Continuous Improvement for Food Manufacturers"
         title={
           <>
             Your Finance team calls it shrink. Operations calls it waste.{' '}
@@ -121,7 +121,7 @@ export default function Home() {
             </span>
           </>
         }
-        subtitle="Fixed-price Power BI reporting and a governed data foundation for food and beverage manufacturers from $30M to $300M. One set of numbers Finance and Operations both sign, in eight weeks, on a platform you likely already license."
+        subtitle="Fixed-price engagements for food and beverage manufacturers from $30M up. We get Finance and Operations agreeing on one set of numbers in eight weeks, build the reporting that tracks them, and fix the processes underneath so the numbers actually move."
         primaryCta={{ label: 'Schedule a Discovery Call', onClick: () => setShowForm(true) }}
         secondaryCta={{ label: 'See Pricing', href: '/pricing' }}
         stats={[
@@ -256,11 +256,12 @@ export default function Home() {
               We sit with Finance, Operations, IT, and the functional owners: warehouse managers,
               production supervisors, sales leadership. We ask what loss and waste means as each of
               them sees it, how they track it today, and what decisions the number needs to inform.
-              The goal isn't a fancy dashboard. It's an organization that acts on the same number.
+              The goal isn't a dashboard. It's an organization that acts on the same number, and a
+              continuous-improvement rhythm that keeps moving it after we leave.
             </p>
           </Reveal>
 
-          <div className="grid gap-6 md:grid-cols-3">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 n: '01',
@@ -274,8 +275,13 @@ export default function Home() {
               },
               {
                 n: '03',
-                title: 'Own',
-                text: 'Every metric gets a named owner and a review cadence. Reporting and governance structures keep those owners engaged after we leave.',
+                title: 'Fix the process',
+                text: 'When the number points at a process, we fix the process: standardized reason codes on inventory adjustments, cycle counting instead of a year-end scramble, purchase orders that separate capital from expense, the ERP used the way it was configured to be.',
+              },
+              {
+                n: '04',
+                title: 'Own the rhythm',
+                text: 'Every metric gets a named owner and a Plan-Do-Check-Act cadence: set the target, run the plan, check the number, adjust. The reporting keeps that loop honest long after the engagement ends.',
               },
             ].map(({ n, title, text }, i) => (
               <Reveal key={n} delay={i * 0.12}>
@@ -333,9 +339,11 @@ export default function Home() {
                   at data and the way we worked together.
                 </blockquote>
                 <figcaption className="text-sm text-white/50">
-                  <span className="font-semibold text-white/80">Sebastian Pastore</span>
+                  <span className="font-semibold text-white/80">Chief Operating Officer</span>
                   <br />
-                  COO, Smith Brothers
+                  Packaged food manufacturer, Pacific Northwest
+                  <br />
+                  <span className="text-steel-soft">Available as a reference. Ask us on the call.</span>
                 </figcaption>
               </figure>
             </Reveal>
@@ -417,21 +425,22 @@ export default function Home() {
             <div className="space-y-5 leading-relaxed text-navy/70">
               <p>
                 Accountant by training. Ten years inside food manufacturing as a cost analyst and
-                plant controller, where I built the Power BI reporting that Operations actually
-                used and Finance actually trusted. Now I do the same work for manufacturers from
-                the outside, and I learn your ERP by reading how the data moves through it.
+                plant controller, building the reporting Operations actually used and Finance
+                actually trusted. Now I do the same work for manufacturers from the outside, and I
+                learn your ERP by reading how the data moves through it.
               </p>
               <p className="border-l-2 border-steel pl-5 font-medium text-navy">
-                Every engagement is scoped, led, and delivered by me, with project support pulled
-                in when it helps. The person you meet on the discovery call is the person who does
-                the work.
+                Every engagement starts with me and stays with me. I scope it, I run the sessions
+                where your departments agree on the numbers, and I sign off on everything that
+                ships. Day-to-day delivery draws on a small team I have worked with for years, so
+                you get one accountable person without paying for a bench.
               </p>
             </div>
             <div className="mt-9 grid grid-cols-3 gap-4 border-t border-navy/10 pt-7">
               {[
                 { value: '15+', label: 'Years in finance and analytics' },
                 { value: '10+', label: 'Years inside manufacturing' },
-                { value: '1', label: 'Point of contact, start to finish' },
+                { value: '1', label: 'Accountable point of contact, start to finish' },
               ].map(({ value, label }) => (
                 <div key={label}>
                   <p className="text-2xl font-bold text-steel md:text-3xl">{value}</p>
@@ -546,7 +555,7 @@ export default function Home() {
       <section id="book" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-20 lg:px-8">
         <CTABox
           title="Stop arguing about the number. Start moving it."
-          description="If your leadership team spends half its meetings deciding whose spreadsheet is right, a 30-minute discovery call will tell you whether this fits. We ask the same questions we asked Smith Brothers, and you will know within minutes whether a $5,000 assessment is worth two weeks of your team's time."
+          description="If your leadership team spends half its meetings deciding whose spreadsheet is right, a 30-minute discovery call will tell you whether this fits. We ask the same questions we asked the client in the case study, and you will know within minutes whether a $5,000 assessment is worth two weeks of your team's time."
           ctaText="Schedule a 30-Minute Discovery Call"
           onClick={() => setShowForm(true)}
           secondaryText="Not ready to talk? Download the free governance self-audit checklist"

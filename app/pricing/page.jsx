@@ -39,6 +39,7 @@ const rungs = [
       'A governed Power BI data layer with one source of truth per metric',
       'The standard dashboard set: financial, operations, and labor',
       'Every field described in plain English, so your people and your AI assistants read the same definition',
+      'The process fixes the assessment pointed at, designed with their owners: reason codes, cycle counting, purchasing discipline, ERP use',
       'Data classification, workspace structure, and security groups',
       'Named owners and a review cadence for every metric',
       'A documentation and handoff packet your IT team keeps and maintains',
@@ -57,7 +58,7 @@ const rungs = [
     includes: [
       'Data quality monitoring with alerts before leadership sees a bad number',
       'Model, report, and refresh maintenance',
-      'A monthly operations review call where we interpret the numbers with you',
+      'A monthly Plan-Do-Check-Act review with your metric owners: what moved, why, and what changes next month',
       'A defined change envelope, written down, so nobody argues about scope',
     ],
     note: '$42,000 a year, all in. No recruiting, no benefits, no payroll taxes, and no six-month ramp while a new hire learns your ERP.',
@@ -151,7 +152,7 @@ const faqs = [
   },
   {
     q: 'Who actually does the work?',
-    a: 'Mitch Cauthron scopes, leads, and delivers every engagement, with project support pulled in where it helps. You are not handed to a junior team after the sales call, because there is no sales team to hand you off from.',
+    a: 'Mitch Cauthron scopes every engagement, runs the discovery and design sessions where your departments agree on the numbers, and signs off on everything that ships. Day-to-day delivery and project management draw on a small team he has worked with for years. You get one accountable person from the first call to the final reconciliation, and you are never handed off after the sale, because there is no sales team to hand you off from.',
   },
 ];
 
@@ -485,7 +486,7 @@ export default function Pricing() {
             <p className="text-[0.95rem] text-navy/55">
               Want to see what a finished engagement looks like first?{' '}
               <Link href="/case-study" className="font-semibold text-steel underline underline-offset-4">
-                Read the Smith Brothers case study
+                Read the loss and waste case study
               </Link>
               .
             </p>

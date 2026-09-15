@@ -16,8 +16,8 @@ export default function Dashboards() {
         imageSrc="/images/hero-dashboards.jpg"
         imageAlt="Engineer reviewing a wall-mounted KPI dashboard in a dim manufacturing operations room"
         eyebrow="Power BI KPI Dashboards"
-        title="A Power BI dashboard is only as useful as the owner who acts on it."
-        subtitle="You have data. You probably already license Power BI. Nothing changes, because the reporting isn't connected to accountability. We build the feedback loops that turn dashboards into action, on the platform your team already has."
+        title="A dashboard is only as useful as the owner who acts on it."
+        subtitle="You have data. You have dashboards. Nothing changes, because the reporting isn't connected to accountability or to the processes that feed it. We build the feedback loops that turn dashboards into action."
         primaryCta={{ label: 'Schedule a Dashboard Discovery Call', onClick: () => setShowForm(true) }}
       />
 
