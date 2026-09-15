@@ -152,7 +152,7 @@ const faqs = [
   },
   {
     q: 'Who actually does the work?',
-    a: 'Mitch Cauthron scopes every engagement, runs the discovery and design sessions where your departments agree on the numbers, and signs off on everything that ships. Day-to-day delivery and project management draw on a small team he has worked with for years. You get one accountable person from the first call to the final reconciliation, and you are never handed off after the sale, because there is no sales team to hand you off from.',
+    a: 'Mitch Cauthron scopes every engagement, runs the discovery and design sessions where your departments agree on the numbers, and signs off on everything that ships. Project support and project management come in as the work needs it, under his direction. You get one accountable person from the first call to the final reconciliation, and you are never handed off after the sale, because there is no sales team to hand you off from.',
   },
 ];
 

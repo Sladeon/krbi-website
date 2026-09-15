@@ -424,16 +424,16 @@ export default function Home() {
             </h2>
             <div className="space-y-5 leading-relaxed text-navy/70">
               <p>
-                Accountant by training. Ten years inside food manufacturing as a cost analyst and
-                plant controller, building the reporting Operations actually used and Finance
-                actually trusted. Now I do the same work for manufacturers from the outside, and I
+                Ten years inside food manufacturing across accounting, finance, and operations,
+                building the processes and owning the outcomes, not just the reports. Now I do that
+                work as a strategic partner to manufacturing leadership from the outside, and I
                 learn your ERP by reading how the data moves through it.
               </p>
               <p className="border-l-2 border-steel pl-5 font-medium text-navy">
                 Every engagement starts with me and stays with me. I scope it, I run the sessions
                 where your departments agree on the numbers, and I sign off on everything that
-                ships. Day-to-day delivery draws on a small team I have worked with for years, so
-                you get one accountable person without paying for a bench.
+                ships. Project support comes in as the work needs it, under my direction, so you
+                get one accountable person without paying for a bench.
               </p>
             </div>
             <div className="mt-9 grid grid-cols-3 gap-4 border-t border-navy/10 pt-7">
